@@ -1,0 +1,145 @@
+.footer {
+    background-color: #0578FF;
+    color: white;
+
+    &__top-box {
+        height: 400px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__bottom-box {
+        padding: 64px 64px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__links {
+        display: flex;
+    }
+
+    &__logo {
+        height: 51px;
+    }
+
+    &__list {
+        display: flex;
+        width: 192px;
+        flex-direction: column;
+        gap: 25px;
+        
+        &-item {
+            cursor: pointer;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    
+        &-item:first-of-type {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__date {
+        padding: 40px 0px 76px 64px;
+    }
+}
+
+.contacts {
+    width: 50%;
+    height: fit-content;
+    padding: 60px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    margin-top: -121px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        font-size: 64px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        line-height: 120%;
+        // padding: 10px 0px;
+    }
+
+    &__text {
+        font-size: 28px;
+        line-height: 140%;
+    }
+
+    &__adress {
+        margin-top: 30px;
+        font-size: 18px;
+        width: 40%;
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &__bottom-box {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 64px 32px 0px;
+            gap: 40px;
+        }
+
+        &__date {
+            padding: 40px 32px 60px;
+        }
+    }
+
+    .contacts {
+        width: 60%;
+
+        &__adress {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .footer {
+        &__top-box {
+            height: 372px;
+        }
+
+        &__bottom-box {
+            padding: 40px 20px 0px;
+        }
+
+        &__links {
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+        }
+
+        &__list {
+            width: calc(50% - 12px);
+        }
+
+        &__date {
+            padding: 40px 20px 64px;
+        }
+    }
+
+    .contacts {
+        width: 90%;
+
+        &__title {
+            font-size: 36px;
+        }
+
+        &__text {
+            font-size: 20px;
+        }
+    }
+}

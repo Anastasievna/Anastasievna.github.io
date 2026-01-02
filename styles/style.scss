@@ -1,0 +1,15 @@
+@import 'components/fonts';
+@import 'components/header';
+@import 'components/reset';
+@import 'components/main';
+@import 'components/highlights';
+@import 'components/gallery';
+@import 'components/download';
+@import 'components/faq';
+@import 'components/footer';
+
+.wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
