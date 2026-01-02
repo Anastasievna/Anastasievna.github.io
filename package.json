@@ -1,0 +1,17 @@
+{
+  "name": "module1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch styles/style.scss styles/style.css",
+    "build": "sass styles/style.scss styles/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.97.1"
+  }
+}

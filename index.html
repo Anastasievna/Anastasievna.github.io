@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header class="header wrapper">
+      <div class="header__logo-box">
+        <picture>
+          <source media="(max-width: 430px)" srcset="images/small-logo.png" />
+          <img src="images/logo.png" alt="logo" class="header__logo" />
+        </picture>
+      </div>
+      <ul class="header__list">
+        <li class="header__list-item">Mobile App</li>
+        <li class="header__list-item">FAQs</li>
+        <li class="header__list-item">Contact</li>
+        <li class="header__list-item">Sign Up</li>
+      </ul>
+      <img src="./images/menu.png" alt="menu" class="header__burger-menu" />
+      <div class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__list-item">Mobile App</li>
+          <li class="header__list-item">FAQs</li>
+          <li class="header__list-item">Contact</li>
+          <li class="header__list-item">Sign Up</li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="main wrapper">
+      <div class="main__data">
+        <h1 class="main__title">Skip the Climbing, Catch the Bus</h1>
+        <p class="main__text">
+          We sell tickets to the best seats in the house – houses on wheels,
+          that is! Get ready for jaw-dropping views without breaking a sweat.
+        </p>
+        <div class="main__radio-btns">
+          <div class="main__radio-box">
+            <input type="radio" name="way" id="trip" value="1" />
+            <label for="trip">Round Trip</label>
+          </div>
+          <div class="main__radio-box">
+            <input type="radio" name="way" id="one way" value="2" />
+            <label for="one way">One Way</label>
+          </div>
+
+          <div class="main__counter-box">
+            <img src="images/person.png" alt="person" class="main__user-icon" />
+            <button class="main__counter-btn">
+              <img src="images/minus.png" alt="minus" class="main__btn-icon" />
+            </button>
+            <span class="main__counter">1</span>
+            <button class="main__counter-btn">
+              <img src="images/plus.png" alt="plus" class="main__btn-icon" />
+            </button>
+          </div>
+        </div>
+
+        <div class="main__block">
+          <div class="main__item">
+            <label class="main__item-label" for="departure">Departure</label>
+            <input
+              type="text"
+              name="departure"
+              id="departure"
+              placeholder="Your City/Station"
+              class="main__item-input"
+            />
+          </div>
+          <div class="main__item">
+            <label class="main__item-label" for="arrival">Arrival</label>
+            <input
+              type="text"
+              name="arrival"
+              id="arrival"
+              placeholder="Where to?"
+              class="main__item-input"
+            />
+          </div>
+          <div class="main__item">
+            <p class="main__item-label">Pick your lucky day</p>
+            <div class="main__item-input">
+              <img src="./images/calendar.png" alt="calendar" width="16" />
+              <span>Depart</span>
+            </div>
+          </div>
+          <div class="main__item">
+            <div class="main__item-input">
+              <img src="./images/calendar.png" alt="calendar" width="16" />
+              <span>Return</span>
+            </div>
+            <!-- <input type="text" name="return" id="return" placeholder="Return" class="main__input main__input-calendar"> -->
+          </div>
+        </div>
+        <button class="main__btn">Find My Alpine Ride</button>
+      </div>
+      <img src="images/hero.png" alt="hero" class="main__image" />
+    </main>
+
+    <div class="highlights wrapper">
+      <!-- <ul class="highlights__list"> -->
+      <li class="highlights__item">
+        <span class="highlights__item-number">68k+</span>
+        <p class="highlights__item-text">Track kilometers</p>
+      </li>
+      <li class="highlights__item">
+        <span class="highlights__item-number">1.4M+</span>
+        <p class="highlights__item-text">Photos Taken</p>
+      </li>
+      <li class="highlights__item">
+        <span class="highlights__item-number">23M+</span>
+        <p class="highlights__item-text">Altitude Gained</p>
+      </li>
+      <li class="highlights__item">
+        <span class="highlights__item-number">165+</span>
+        <p class="highlights__item-text">Years of history</p>
+      </li>
+      <!-- </ul> -->
+    </div>
+
+    <div class="gallery wrapper">
+      <p class="gallery__header">Glimpses of Glory</p>
+      <div class="gallery__main">
+        <div class="gallery__left">
+          <img src="./images/img11.png" alt="image" />
+          <img src="./images/img12.png" alt="image" />
+        </div>
+        <div class="gallery__right">
+          <div class="gallery__right-top">
+            <img
+              src="./images/img15.png"
+              alt="image"
+              class="gallery__image-top-left"
+            />
+            <img
+              src="./images/img14.png"
+              alt="image"
+              class="gallery__image-top-right"
+            />
+          </div>
+          <img src="./images/img13.png" alt="image" class="gallery__image" />
+        </div>
+      </div>
+    </div>
+
+    <div class="download wrapper">
+      <p class="download__header">Free downloads app now!</p>
+      <div class="download__images">
+        <div class="download__images-item">
+          <img src="./images/google.png" alt="google-play" />
+        </div>
+        <div class="download__images-item">
+          <img src="./images/huawei.png" alt="huawei" />
+        </div>
+        <div class="download__images-item">
+          <img src="./images/apple.png" alt="app-store" />
+        </div>
+      </div>
+    </div>
+
+    <div class="faq wrapper">
+      <p class="faq__title">FAQs.</p>
+      <div class="faq__item">
+        <div class="faq__question-box">
+          <p class="faq__question">Alpine Bus Journeys?</p>
+          <img src="./images/mark.png" alt="plus" />
+        </div>
+        <p class="faq__answer faq__hidden">
+          Forget crowded cities! Alpine Bus Journeys are your comfy seat with
+          panoramic windows to breathtaking mountain vistas, charming villages,
+          and air so fresh it might make you yodel (please don't, unless you're
+          outside). It's transportation with a side of unparalleled scenery (and
+          maybe a hairpin turn).
+        </p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question-box">
+          <p class="faq__question">What about seating options?</p>
+          <img src="./images/mark.png" alt="plus" />
+        </div>
+        <p class="faq__answer faq__hidden">
+          Generally, you'll find comfy standard seats (great views, great value,
+          maybe great new friends) and perhaps slightly better seats with extra
+          legroom. All offer a front-row seat to the greatest show on Earth –
+          the Alps!
+        </p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question-box">
+          <p class="faq__question">What is the Alpine Wallet?</p>
+          <img src="./images/mark.png" alt="plus" />
+        </div>
+        <p class="faq__answer faq__hidden">
+          It's your digital stash of cash that makes booking bus tickets
+          smoother than a perfectly paved mountain road. Load it up and watch
+          your travel dreams become reality faster than a bus goes downhill.
+        </p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question-box">
+          <p class="faq__question">Why a Bus Station Fee?</p>
+          <img src="./images/mark.png" alt="plus" />
+        </div>
+        <p class="faq__answer faq__hidden">
+          A small contribution to ensure the station is clean, has reasonably
+          fresh mountain air (filtered from bus fumes), and enough signs
+          pointing you towards your bus, not away from it. Sometimes covers the
+          cost of moving rogue bicycles.
+        </p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question-box">
+          <p class="faq__question">Vitae sollicitudin vitae libero tincidunt</p>
+          <img src="./images/mark.png" alt="plus" />
+        </div>
+        <p class="faq__answer faq__hidden"></p>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question-box">
+          <p class="faq__question">Why are buses late?</p>
+          <img src="./images/mark.png" alt="plus" />
+        </div>
+        <p class="faq__answer faq__hidden">
+          Sometimes it's the weather (snow happens!), sometimes a sudden flock
+          of particularly slow-moving sheep on the road, and sometimes the
+          driver just had to stop for a photo of that view. Or maybe they got
+          stuck behind a tractor. Welcome to "Mountain Road Time"!
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer wrapper">
+      <div class="footer__top-box">
+        <div class="contacts">
+          <p class="contacts__title">Contact us</p>
+          <p class="contacts__text">+41 98765 43210</p>
+          <p class="contacts__text">hello@peakpasses.eu</p>
+          <p class="contacts__adress">
+            Alpenblick Strasse 7, <br />
+            12345 Edelweiss Town, Alps
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom-box">
+        <img src="./images/logo-white.png" alt="logo" class="footer__logo" />
+        <div class="footer__links">
+          <ul class="footer__list">
+            <li class="footer__list-item">About</li>
+            <li class="footer__list-item">How it works</li>
+            <li class="footer__list-item">Featured</li>
+            <li class="footer__list-item">Partnership</li>
+            <li class="footer__list-item">Bussiness Relation</li>
+          </ul>
+          <ul class="footer__list">
+            <li class="footer__list-item">Community</li>
+            <li class="footer__list-item">Events</li>
+            <li class="footer__list-item">Blog</li>
+            <li class="footer__list-item">Podcast</li>
+            <li class="footer__list-item">Invite a friend</li>
+          </ul>
+          <ul class="footer__list">
+            <li class="footer__list-item">Socials</li>
+            <li class="footer__list-item">Discord</li>
+            <li class="footer__list-item">Instagram</li>
+            <li class="footer__list-item">Twitter</li>
+            <li class="footer__list-item">Facebook</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__date">
+        <p>English: © 2025 Peak Passages.</p>
+        <p>All Rights Reserved (Especially the Window Seats).</p>
+      </div>
+    </footer>
+  </body>
+</html>
