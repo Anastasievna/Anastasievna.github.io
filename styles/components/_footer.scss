@@ -12,6 +12,7 @@
         padding: 64px 64px 0px;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &__links {
@@ -94,6 +95,14 @@
 
         &__date {
             padding: 40px 32px 60px;
+        }
+
+        &__links {
+            gap: 20px;
+        }
+
+        &__list {
+            width: calc((100% - 20px)/3);
         }
     }
 

@@ -3,5 +3,9 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
-    font-family: Poppins, 'Times New Roman', Times, serif;
+    font-family: Poppins, 'Times New Roman', Times, serif !important;
+}
+
+input[type="radio"], button {
+    cursor: pointer;
 }
