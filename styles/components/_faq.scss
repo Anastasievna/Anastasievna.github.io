@@ -23,13 +23,29 @@
         padding: 16px 0px;
     }
 
+    &__image {
+        cursor: pointer;
+        transition: transform 0.7s ease-in;
+
+        &--clicked {
+            transform: rotate(45deg);
+        }
+    }
+
     &__answer {
         font-size: 16px;
         padding: 16px 0px;
-    }
+        overflow: hidden;
+        transform: scaleY(0);
+        transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-    &__hidden {
-        display: none;
+        &--visible {
+            transform: scaleY(1);
+        }
+
+        &--hidden {
+            display: none;
+        }
     }
 }
 

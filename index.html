@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,6 +21,9 @@
         <li class="header__list-item">Sign Up</li>
       </ul>
       <img src="./images/menu.png" alt="menu" class="header__burger-menu" />
+      <button id="close-menu-btn" class="header__close-menu-btn hide">
+        <img src="./images/close-menu.png" alt="close-menu" />
+      </button>
       <div class="header__menu">
         <ul class="header__menu-list">
           <li class="header__list-item">Mobile App</li>
@@ -38,23 +41,23 @@
           We sell tickets to the best seats in the house – houses on wheels,
           that is! Get ready for jaw-dropping views without breaking a sweat.
         </p>
-        <div class="main__radio-btns">
+        <div id="way-btns" class="main__radio-btns">
           <div class="main__radio-box">
-            <input type="radio" name="way" id="trip" value="1" />
+            <input type="radio" name="way" id="trip" value="trip" checked />
             <label for="trip">Round Trip</label>
           </div>
           <div class="main__radio-box">
-            <input type="radio" name="way" id="one way" value="2" />
+            <input type="radio" name="way" id="one way" value="one way" />
             <label for="one way">One Way</label>
           </div>
 
           <div class="main__counter-box">
             <img src="images/person.png" alt="person" class="main__user-icon" />
-            <button class="main__counter-btn">
+            <button id="minus-btn" class="main__counter-btn">
               <img src="images/minus.png" alt="minus" class="main__btn-icon" />
             </button>
-            <span class="main__counter">1</span>
-            <button class="main__counter-btn">
+            <span id="passenger-count" class="main__counter">1</span>
+            <button id="plus-btn" class="main__counter-btn">
               <img src="images/plus.png" alt="plus" class="main__btn-icon" />
             </button>
           </div>
@@ -63,40 +66,75 @@
         <div class="main__block">
           <div class="main__item">
             <label class="main__item-label" for="departure">Departure</label>
-            <input
-              type="text"
-              name="departure"
-              id="departure"
-              placeholder="Your City/Station"
-              class="main__item-input"
-            />
+            <div class="main__item-box">
+              <input
+                type="text"
+                name="departure"
+                id="departure"
+                placeholder="Your City/Station"
+                class="main__item-input input-city"
+                autocomplete="off"
+              />
+              <span id="clear-departure-input" class="main__item-clear">×</span>
+              <ul id="list-departure" class="main__item-list hide"></ul>
+            </div>
           </div>
           <div class="main__item">
             <label class="main__item-label" for="arrival">Arrival</label>
-            <input
-              type="text"
-              name="arrival"
-              id="arrival"
-              placeholder="Where to?"
-              class="main__item-input"
-            />
+            <div class="main__item-box">
+              <input
+                type="text"
+                name="arrival"
+                id="arrival"
+                placeholder="Where to?"
+                class="main__item-input input-city"
+                autocomplete="off"
+              />
+              <span id="clear-arrival-input" class="main__item-clear">×</span>
+              <ul id="list-arrival" class="main__item-list hide"></ul>
+            </div>
           </div>
           <div class="main__item">
             <p class="main__item-label">Pick your lucky day</p>
             <div class="main__item-input">
-              <img src="./images/calendar.png" alt="calendar" width="16" />
-              <span>Depart</span>
+              <img
+                src="./images/calendar.png"
+                alt="calendar"
+                width="16"
+                class="calendar-icon"
+              />
+              <span id="depart">Depart</span>
             </div>
           </div>
           <div class="main__item">
-            <div class="main__item-input">
-              <img src="./images/calendar.png" alt="calendar" width="16" />
-              <span>Return</span>
+            <div id="return-input" class="main__item-input">
+              <img
+                src="./images/calendar.png"
+                alt="calendar"
+                width="16"
+                class="calendar-icon"
+              />
+              <span id="return">Return</span>
             </div>
             <!-- <input type="text" name="return" id="return" placeholder="Return" class="main__input main__input-calendar"> -->
           </div>
         </div>
-        <button class="main__btn">Find My Alpine Ride</button>
+
+        <div class="calendar__block">
+          <div id="calendar" class="calendar">
+            <div class="calendar__month-box" id="month-box"></div>
+
+            <div class="calendar__btns">
+              <button class="calendar__btn" type="button" id="reset">
+                reset
+              </button>
+              <button class="calendar__btn active" type="button" id="apply">
+                apply
+              </button>
+            </div>
+          </div>
+        </div>
+        <button id="send-form" class="main__btn">Find My Alpine Ride</button>
       </div>
       <img src="images/hero.png" alt="hero" class="main__image" />
     </main>
@@ -167,9 +205,9 @@
       <div class="faq__item">
         <div class="faq__question-box">
           <p class="faq__question">Alpine Bus Journeys?</p>
-          <img src="./images/mark.png" alt="plus" />
+          <img class="faq__image" src="./images/mark.png" alt="plus" />
         </div>
-        <p class="faq__answer faq__hidden">
+        <p class="faq__answer faq__answer--hidden">
           Forget crowded cities! Alpine Bus Journeys are your comfy seat with
           panoramic windows to breathtaking mountain vistas, charming villages,
           and air so fresh it might make you yodel (please don't, unless you're
@@ -180,9 +218,9 @@
       <div class="faq__item">
         <div class="faq__question-box">
           <p class="faq__question">What about seating options?</p>
-          <img src="./images/mark.png" alt="plus" />
+          <img class="faq__image" src="./images/mark.png" alt="plus" />
         </div>
-        <p class="faq__answer faq__hidden">
+        <p class="faq__answer faq__answer--hidden">
           Generally, you'll find comfy standard seats (great views, great value,
           maybe great new friends) and perhaps slightly better seats with extra
           legroom. All offer a front-row seat to the greatest show on Earth –
@@ -192,9 +230,9 @@
       <div class="faq__item">
         <div class="faq__question-box">
           <p class="faq__question">What is the Alpine Wallet?</p>
-          <img src="./images/mark.png" alt="plus" />
+          <img class="faq__image" src="./images/mark.png" alt="plus" />
         </div>
-        <p class="faq__answer faq__hidden">
+        <p class="faq__answer faq__answer--hidden">
           It's your digital stash of cash that makes booking bus tickets
           smoother than a perfectly paved mountain road. Load it up and watch
           your travel dreams become reality faster than a bus goes downhill.
@@ -203,9 +241,9 @@
       <div class="faq__item">
         <div class="faq__question-box">
           <p class="faq__question">Why a Bus Station Fee?</p>
-          <img src="./images/mark.png" alt="plus" />
+          <img class="faq__image" src="./images/mark.png" alt="plus" />
         </div>
-        <p class="faq__answer faq__hidden">
+        <p class="faq__answer faq__answer--hidden">
           A small contribution to ensure the station is clean, has reasonably
           fresh mountain air (filtered from bus fumes), and enough signs
           pointing you towards your bus, not away from it. Sometimes covers the
@@ -214,17 +252,22 @@
       </div>
       <div class="faq__item">
         <div class="faq__question-box">
-          <p class="faq__question">Vitae sollicitudin vitae libero tincidunt</p>
-          <img src="./images/mark.png" alt="plus" />
+          <p class="faq__question">Peak Season Surcharge?</p>
+          <img class="faq__image" src="./images/mark.png" alt="plus" />
         </div>
-        <p class="faq__answer faq__hidden"></p>
+        <p class="faq__answer faq__answer--hidden">
+          It's the little extra you pay to enjoy the authentic experience of
+          sharing breathtaking views with a lot of your closest friends (who you
+          haven't met yet) while strategically placing your bag in the overhead
+          compartment. Guarantees a vibrant, energetic journey!
+        </p>
       </div>
       <div class="faq__item">
         <div class="faq__question-box">
           <p class="faq__question">Why are buses late?</p>
-          <img src="./images/mark.png" alt="plus" />
+          <img class="faq__image" src="./images/mark.png" alt="plus" />
         </div>
-        <p class="faq__answer faq__hidden">
+        <p class="faq__answer faq__answer--hidden">
           Sometimes it's the weather (snow happens!), sometimes a sudden flock
           of particularly slow-moving sheep on the road, and sometimes the
           driver just had to stop for a photo of that view. Or maybe they got
@@ -276,5 +319,6 @@
         <p>All Rights Reserved (Especially the Window Seats).</p>
       </div>
     </footer>
+    <script type="module" src="./scripts/script.js"></script>
   </body>
 </html>
