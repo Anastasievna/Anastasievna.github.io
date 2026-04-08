@@ -1,83 +1,86 @@
-import fsPromises from 'fs/promises';
-import fs from 'fs'
-import { getPath } from './filePath.ts';
-import { colorLog } from './logger.ts';
-import path from 'node:path'
+import fsPromises from "fs/promises";
+import fs from "fs";
+import { getPath } from "./filePath.ts";
+import { colorLog } from "./logger.ts";
+import path from "node:path";
+import type { dataTypes } from "#types/index";
 
-export async function createFile(fileName: string, content: string){
-  try{
-   await fsPromises.writeFile(getPath(fileName), content)
+export function createData(type: dataTypes, data: unknown) {
+  return { type, data };
+}
 
-   colorLog('File created', 'green')
-  }catch(err){
+export async function createFile(fileName: string, content: string) {
+  try {
+    await fsPromises.writeFile(getPath(fileName), content);
+
+    colorLog("File created", "green");
+  } catch (err) {
     console.log(err);
   }
 }
 
-export async function readDirSimple(dirName: string){
-  try{
-   const files = await fsPromises.readdir(getPath(dirName))
+export async function readDirSimple(dirName: string) {
+  try {
+    const files = await fsPromises.readdir(getPath(dirName));
 
-   colorLog(files, 'green')
-  }catch(err){
+    colorLog(files, "green");
+  } catch (err) {
     console.log(err);
   }
 }
 
 export async function removeFile(path: string) {
-   try {
-        await fsPromises.unlink(getPath(path));
-        console.log(`Файл ${path} удален.`);
-    } catch (error) {
-    if ((error as {code: string}).code === 'ENOENT') {
-          console.log("Файла и так нет, ничего страшного.");
-     } else {
-       console.log(error);
-     }
-}
+  try {
+    await fsPromises.unlink(getPath(path));
+    console.log(`Файл ${path} удален.`);
+  } catch (error) {
+    if ((error as { code: string }).code === "ENOENT") {
+      console.log("Файла и так нет, ничего страшного.");
+    } else {
+      console.log(error);
+    }
+  }
 }
 
 export async function addUser(user: string) {
-       const DB_PATH = getPath('./files/db.json')
-      // 1. Читаем строку
-        const rawData = await fsPromises.readFile(DB_PATH, 'utf-8');
-       // 2. Превращаем в массив JS
-       const users = JSON.parse(rawData);
-       // 3. Меняем данные
-       users.push(user);
-       // 4. Превращаем обратно в строку и записываем
-       // null, 2 — для красивых отступов
-       await fsPromises.writeFile(DB_PATH, JSON.stringify(users, null, 2));
+  const DB_PATH = getPath("./files/db.json");
+  // 1. Читаем строку
+  const rawData = await fsPromises.readFile(DB_PATH, "utf-8");
+  // 2. Превращаем в массив JS
+  const users = JSON.parse(rawData);
+  // 3. Меняем данные
+  users.push(user);
+  // 4. Превращаем обратно в строку и записываем
+  // null, 2 — для красивых отступов
+  await fsPromises.writeFile(DB_PATH, JSON.stringify(users, null, 2));
 
-      colorLog('User created', 'green')
+  colorLog("User created", "green");
 }
 
 export function copyFile(fileName: string, copyFileName: string) {
-    const stream = fs.createReadStream(getPath(fileName));
+  const stream = fs.createReadStream(getPath(fileName));
 
-    const writeableStream = fs.createWriteStream(getPath(copyFileName));
+  const writeableStream = fs.createWriteStream(getPath(copyFileName));
 
-    stream.pipe(writeableStream);
+  stream.pipe(writeableStream);
 
-    stream.on('end', () => console.log('Запись файла завершено'));
+  stream.on("end", () => console.log("Запись файла завершено"));
 }
 
-export function readDir(dirName: string) {
-    fs.readdir(getPath(dirName),{ withFileTypes: true }, (err,data) => {
-     if(err){ throw err }
+export async function readDir(dirName: string) {
+  const data = await fsPromises.readdir(getPath(dirName), {
+    withFileTypes: true,
+  });
 
-    data.forEach(item=>{
-      if(item.isFile()){
-        let name = item.name.split('.')[0]
-        let ext = path.extname(item.name)
-        let index =  path.resolve(getPath(dirName),`./${item.name}`)
+  const filesArr: string[] = [];
 
-        fs.stat(index, (err,stats) => {
-          console.log('Имя файла: ' + name + '; Расширение : '+ ext + '; Размер : ' + stats.size +' байт;');
-        })
-      }
-    })
-})
+  data.forEach((item) => {
+    if (item.isFile()) {
+      let pathToFile = path.resolve(getPath(dirName), `./${item.name}`);
+
+      filesArr.push(pathToFile);
+    }
+  });
+
+  return filesArr;
 }
-
-

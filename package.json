@@ -21,12 +21,14 @@
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "xliff": "^6.3.0"
   },
   "imports": {
     "#routes/*": "./server/routes/*.ts",
     "#services/*": "./server/services/*.ts",
     "#modules/*": "./server/modules/*.ts",
-    "#middleWare/*": "./server/middleWares/*.ts"
+    "#middleWare/*": "./server/middleWares/*.ts",
+    "#types/*": "./server/types/*.ts"
   }
 }
