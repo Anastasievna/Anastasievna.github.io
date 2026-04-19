@@ -4,7 +4,7 @@
   "country": "Colombia",
   "description": "Sweet and clean decaf processed using natural ethyl acetate derived from sugarcane. No chemical aftertaste.",
   "roasterComment": "You won't believe it's decaf. The sugarcane process preserves all the sweetness, making it a perfect evening treat.",
-  "imageUrl": "/assets/flags/co.svg",
+  "imageUrl": "assets/flags/co.svg",
   "details": {
     "process": "Sugarcane Decaf",
     "region": "Cauca",
@@ -19,11 +19,24 @@
   },
   "recipes": [
     {
-      "id": "r1", "method": "V60", "grindSize": "EK43 - 9", "waterTemp": 90, "doseIn": 18, "doseOut": 280, "timeTotal": "2:50",
+      "id": "r1",
+      "method": "V60",
+      "grindSize": "EK43 - 9",
+      "waterTemp": 90,
+      "doseIn": 18,
+      "doseOut": 280,
+      "timeTotal": "2:50",
       "steps": ["0:00 - Bloom 50g", "0:40 - Pour to 280g"]
     },
     {
-      "id": "r2", "method": "Espresso", "grindSize": "Mythos - 3.5", "waterTemp": 91, "doseIn": 18, "doseOut": 36, "timeTotal": "25s", "steps": []
+      "id": "r2",
+      "method": "Espresso",
+      "grindSize": "Mythos - 3.5",
+      "waterTemp": 91,
+      "doseIn": 18,
+      "doseOut": 36,
+      "timeTotal": "25s",
+      "steps": []
     }
   ]
 }

@@ -4,7 +4,7 @@
   "country": "Kenya",
   "description": "Bright, berry-like, slightly citrusy, slightly tart like ripe persimmon and sweet like rosehip compote.",
   "roasterComment": "A textbook Kenyan coffee. The acidity is vibrant but balanced by a deep sweetness. It shines best on filter methods.",
-  "imageUrl": "/assets/flags/ke.svg",
+  "imageUrl": "assets/flags/ke.svg",
   "details": {
     "process": "Washed",
     "region": "Nakuru",
@@ -26,7 +26,11 @@
       "doseIn": 16,
       "doseOut": 260,
       "timeTotal": "2:30",
-      "steps": ["0:00 - Bloom 50g", "0:30 - Pour to 100g", "1:30 - Pour to 260g"]
+      "steps": [
+        "0:00 - Bloom 50g",
+        "0:30 - Pour to 100g",
+        "1:30 - Pour to 260g"
+      ]
     },
     {
       "id": "rec-2",

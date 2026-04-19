@@ -75,22 +75,20 @@ const mockBeans = [
 export const apiClient = {
     // 1. GET LIST
     async getAllBeans() {
-        // Имитация задержки сети
-        return new Promise(resolve => {
-            setTimeout(() => resolve(mockBeans), 300);
-        });
+        const res = await fetch(`${API_BASE}/beans`);
+        const response = await res.json();
 
-        // КОГДА БУДЕТ БЭКЕНД, РАСКОММЕНТИРУЙ ЭТО:
-        // const res = await fetch(`${API_BASE}/beans`);
-        // return await res.json();
+        if(response.type === "success") return response.data
+        else return [];
     },
 
     // 2. GET DETAILS
     async getBeanById(id) {
-        return new Promise(resolve => {
-            const bean = mockBeans.find(b => b.id === id);
-            resolve(bean);
-        });
+        const res = await fetch(`${API_BASE}/beans/${id}`);
+        const response = await res.json();
+
+        if(response.type === "success") return response.data
+        else return {};
     },
 
     // 3. CREATE

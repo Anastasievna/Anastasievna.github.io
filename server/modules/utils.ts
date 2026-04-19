@@ -3,9 +3,9 @@ import fs from "fs";
 import { getPath } from "./filePath.ts";
 import { colorLog } from "./logger.ts";
 import path from "node:path";
-import type { dataTypes } from "#types/index";
+import { dataTypes } from "#types/index";
 
-export function createData(type: dataTypes, data: unknown) {
+export function createData<T>(type: dataTypes, data: T) {
   return { type, data };
 }
 
@@ -68,19 +68,24 @@ export function copyFile(fileName: string, copyFileName: string) {
 }
 
 export async function readDir(dirName: string) {
-  const data = await fsPromises.readdir(getPath(dirName), {
-    withFileTypes: true,
-  });
+  try {
+    const data = await fsPromises.readdir(getPath(dirName), {
+      withFileTypes: true,
+    });
 
-  const filesArr: string[] = [];
+    const filesArr: string[] = [];
 
-  data.forEach((item) => {
-    if (item.isFile()) {
-      let pathToFile = path.resolve(getPath(dirName), `./${item.name}`);
-
-      filesArr.push(pathToFile);
-    }
-  });
-
-  return filesArr;
+    data
+      .filter((item) => item.isFile())
+      .forEach((item) => {
+        let pathToFile = path.resolve(getPath(dirName), `./${item.name}`);
+        filesArr.push(pathToFile);
+      });
+    return createData(dataTypes.SUCCESS, filesArr);
+  } catch (err) {
+    return createData(
+      dataTypes.ERROR,
+      (err as { message: string })?.message || "Failed read dir beans",
+    );
+  }
 }
