@@ -1,5 +1,4 @@
-import { getPath } from "#modules/filePath";
-import { createData } from "#modules/utils";
+import { getPath, createData } from "#modules/utils";
 import { dataTypes } from "#types/index";
 import fsPromises from "fs/promises";
 import path from "node:path";

@@ -21,7 +21,7 @@
       <div class="logo">Third Wave</div>
 
       <nav class="category-nav">
-        <button class="nav-btn active" data-type="bean">
+        <button class="nav-btn" data-type="bean">
           <i data-lucide="bean"></i> <span data-i18n="ui.bean">Bean</span>
         </button>
         <button class="nav-btn" data-type="beverage">
@@ -173,6 +173,16 @@
             />
           </div>
 
+          <!-- Тип? -->
+          <div class="form-group">
+              <label>Тип</label>
+              <select id="form-type">
+                <option>Bean</option>
+                <option>Beverage</option>
+                <option>Dessert</option>
+              </select>
+          </div>
+
           <!-- География и Детали -->
           <div class="form-row">
             <div class="form-group" style="flex: 1">
@@ -290,7 +300,7 @@
             <button type="button" id="btn-cancel" class="btn-secondary">
               Cancel
             </button>
-            <button type="submit" class="btn-primary">Save</button>
+            <button id="btn-save" type="button" class="btn-primary">Save</button>
           </div>
         </form>
       </div>

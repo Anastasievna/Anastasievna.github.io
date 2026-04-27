@@ -30,6 +30,7 @@ type recipeType = {
 
 export type beanType = {
   id: string;
+  type: string;
   title: string;
   country: string;
   description: string;
@@ -38,6 +39,7 @@ export type beanType = {
   details: beanDetailsType;
   flavorProfile: flavorType;
   recipes: recipeType[];
+  path?: string
 };
 
 export type shortBeanType = Pick<

@@ -1,28 +1,23 @@
-import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { languageRouter } from "#routes/language";
 import { beansRouter } from "#routes/beans";
+import { getPath } from "#modules/utils";
+import path from "node:path";
 
-const PORT = process.env.PORT;
-
-// обрабатыавет боди
-const bodyJsonMiddleWare = express.json({
-  type: () => true,
-});
+const PORT = 3000;
 
 const app = express();
 
 app.use(cors());
-app.use(bodyJsonMiddleWare);
+app.use(express.json({type: () => true}));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("./server/dist"));
+app.use(express.static(getPath("public"))); 
 app.use("/api/i18n", languageRouter);
 app.use("/api/beans", beansRouter);
 
-app.get("/", async () => {
-  console.log("hello");
-  // res.sendFile('./index.html', { root: './server/dist' } );
+app.get('/', (req, res) => {
+    res.sendFile(getPath(path.join("public", "index.html")));
 });
 
 app.listen(PORT, () => {

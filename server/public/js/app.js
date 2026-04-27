@@ -3,6 +3,7 @@ import { renderBeanList, renderBeanDetails, applyTranslations } from './render.j
 
 // STATE
 let currentBeanId = null;
+let currentType = null;
 
 // INIT
 document.addEventListener('DOMContentLoaded', async () => {
@@ -56,16 +57,16 @@ document.getElementById('btn-edit').addEventListener('click', async () => {
     openModal(bean);
 });
 
-// --- ВОТ ЭТА ВАЖНАЯ ЧАСТЬ, КОТОРАЯ МОГЛА ПРОПАСТЬ ---
 document.getElementById('btn-cancel').addEventListener('click', closeModal);
 // ----------------------------------------------------
 
 // Form Submit
-document.getElementById('bean-form').addEventListener('submit', async (e) => {
+document.getElementById('btn-save').addEventListener('click', async (e) => {
     e.preventDefault();
 
     const formData = {
         title: document.getElementById('form-title').value,
+        type: document.getElementById('form-type').value,
         country: document.getElementById('form-country').value,
         description: document.getElementById('form-description').value,
         imageUrl: document.getElementById('form-image').value,
@@ -88,7 +89,7 @@ document.getElementById('bean-form').addEventListener('submit', async (e) => {
     const id = document.getElementById('form-id').value;
 
     if (id) {
-        await apiClient.updateBean(id, formData);
+       await apiClient.updateBean(id, formData);
     } else {
         await apiClient.createBean(formData);
     }
@@ -98,20 +99,21 @@ document.getElementById('bean-form').addEventListener('submit', async (e) => {
 });
 
 // Category Tabs (Bean / Beverage / Dessert)
-// (Если у тебя в HTML есть эти кнопки, этот код нужен. Если нет - не помешает)
 document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', async(e) => {
         // Убираем active у всех
         document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
         // Добавляем нажатой (ищем ближайшую кнопку, т.к. клик может быть по иконке внутри)
         const button = e.target.closest('.nav-btn');
         button.classList.add('active');
 
-        // TODO: В Beta версии здесь будет фильтрация
+        // фильтрация
         console.log('Filter by:', button.dataset.type);
+        currentType = button.dataset.type;
+        resetView();
+        await loadList();
     });
 });
-
 
 // =========================================================
 // LOGIC FUNCTIONS
@@ -121,20 +123,19 @@ async function loadList() {
     const listContainer = document.getElementById('bean-list');
     listContainer.innerHTML = '<div class="loading">Loading...</div>';
 
-    const beans = await apiClient.getAllBeans();
+    const beans = await apiClient.getAllBeans(currentType);
+    if (!beans.find(bean => bean.id === currentBeanId)) resetView();
 
     if (!beans || beans.length === 0) {
         listContainer.innerHTML = '<div class="empty-msg">No beans found. Add one!</div>';
         return;
     }
 
-    renderBeanList(beans, async (id) => {
+    renderBeanList(beans, currentBeanId, async (id) => {
         currentBeanId = id;
         const bean = await apiClient.getBeanById(id);
-
         document.getElementById('placeholder-view').classList.add('hidden');
         document.getElementById('details-view').classList.remove('hidden');
-
         renderBeanDetails(bean);
     });
 }
@@ -168,6 +169,7 @@ function openModal(bean = null) {
 
         // Basic
         document.getElementById('form-title').value = bean.title;
+        document.getElementById('form-type').value = bean.type;
         document.getElementById('form-country').value = bean.country;
         document.getElementById('form-image').value = bean.imageUrl || 'assets/flags/default.svg';
         document.getElementById('form-description').value = bean.description;

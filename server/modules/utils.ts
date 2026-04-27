@@ -1,70 +1,38 @@
 import fsPromises from "fs/promises";
-import fs from "fs";
-import { getPath } from "./filePath.ts";
-import { colorLog } from "./logger.ts";
+import { fileURLToPath } from 'url';
 import path from "node:path";
 import { dataTypes } from "#types/index";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export function createData<T>(type: dataTypes, data: T) {
   return { type, data };
 }
 
-export async function createFile(fileName: string, content: string) {
-  try {
-    await fsPromises.writeFile(getPath(fileName), content);
+export function getPath(file: string) {
+    const pathToFile = path.join(__dirname,'../', file)
+    return pathToFile
+}
 
-    colorLog("File created", "green");
+export async function createFile(content: string, pathName: string, isFullPath: boolean = false) {
+  try {
+    const fullPathName = !isFullPath ? getPath(pathName) : pathName;
+    await fsPromises.writeFile(fullPathName, content);
+    return createData(dataTypes.SUCCESS, "File created");
   } catch (err) {
-    console.log(err);
+    return createData(dataTypes.ERROR, (err as { message: string })?.message || "File not created",);
   }
 }
 
-export async function readDirSimple(dirName: string) {
+export async function removeFile(pathName: string, isFullPath: boolean = false) {
   try {
-    const files = await fsPromises.readdir(getPath(dirName));
-
-    colorLog(files, "green");
+    const fullPathName = !isFullPath ? getPath(pathName) : pathName;
+    await fsPromises.unlink(fullPathName);
+    return createData(dataTypes.SUCCESS, "File deleted");
   } catch (err) {
-    console.log(err);
+    return createData(dataTypes.ERROR, (err as { message: string })?.message || "File not deleted",);
   }
-}
-
-export async function removeFile(path: string) {
-  try {
-    await fsPromises.unlink(getPath(path));
-    console.log(`Файл ${path} удален.`);
-  } catch (error) {
-    if ((error as { code: string }).code === "ENOENT") {
-      console.log("Файла и так нет, ничего страшного.");
-    } else {
-      console.log(error);
-    }
-  }
-}
-
-export async function addUser(user: string) {
-  const DB_PATH = getPath("./files/db.json");
-  // 1. Читаем строку
-  const rawData = await fsPromises.readFile(DB_PATH, "utf-8");
-  // 2. Превращаем в массив JS
-  const users = JSON.parse(rawData);
-  // 3. Меняем данные
-  users.push(user);
-  // 4. Превращаем обратно в строку и записываем
-  // null, 2 — для красивых отступов
-  await fsPromises.writeFile(DB_PATH, JSON.stringify(users, null, 2));
-
-  colorLog("User created", "green");
-}
-
-export function copyFile(fileName: string, copyFileName: string) {
-  const stream = fs.createReadStream(getPath(fileName));
-
-  const writeableStream = fs.createWriteStream(getPath(copyFileName));
-
-  stream.pipe(writeableStream);
-
-  stream.on("end", () => console.log("Запись файла завершено"));
 }
 
 export async function readDir(dirName: string) {

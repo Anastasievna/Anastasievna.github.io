@@ -1,22 +1,31 @@
 {
-  "id": "2c8d6bcd-ccfd-4b2d-9b5d-ab8dfbbd4cee",
   "title": "Cerrado Mineiro",
+  "type": "Dessert",
   "country": "Brazil",
   "description": "Sweet, full-bodied coffee with low acidity. Perfect for milk drinks and classic espresso lovers.",
-  "roasterComment": "A reliable classic. This lot is exceptionally clean for a natural process, bringing pure chocolate joy to your morning cup.",
   "imageUrl": "assets/flags/br.svg",
+  "roasterComment": "A reliable classic! This lot is exceptionally clean for a natural process, bringing pure chocolate joy to your morning cup.",
   "details": {
     "process": "Natural",
+    "scaScore": 82.5,
     "region": "Minas Gerais",
-    "variety": ["Mundo Novo", "Catuai"],
-    "scaScore": 82.5
+    "variety": [
+      "Mundo Novo",
+      "Catuai"
+    ]
   },
   "flavorProfile": {
-    "notes": ["Hazelnut", "Milk Chocolate", "Caramel", "Dried Date"],
+    "notes": [
+      "Hazelnut",
+      "Milk Chocolate",
+      "Caramel",
+      "Dried Date"
+    ],
     "acidity": 3,
     "sweetness": 8,
     "bitterness": 4
   },
+  "id": "2c8d6bcd-ccfd-4b2d-9b5d-ab8dfbbd4cee",
   "recipes": [
     {
       "id": "r1",
@@ -26,7 +35,10 @@
       "doseIn": 20,
       "doseOut": 300,
       "timeTotal": "3:00",
-      "steps": ["0:00 - Bloom 60g", "0:45 - Pour to 300g"]
+      "steps": [
+        "0:00 - Bloom 60g",
+        "0:45 - Pour to 300g"
+      ]
     },
     {
       "id": "r2",

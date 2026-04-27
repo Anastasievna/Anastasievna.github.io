@@ -1,15 +1,18 @@
 /**
  * Renders the sidebar list
  */
-export function renderBeanList(beans, onSelect) {
+export function renderBeanList(beans, currentBeanId, onSelect) {
     const listContainer = document.getElementById('bean-list');
     listContainer.innerHTML = '';
 
     beans.forEach(bean => {
         const item = document.createElement('div');
         item.className = 'card-item';
-        // Если bean.id равен currentId - можно добавить класс active,
-        // но логика active реализуется через клик ниже.
+
+        if (bean.id === currentBeanId) {
+            item.classList.add('active');
+            onSelect(bean.id);
+        }
 
         const imgUrl = bean.imageUrl || 'assets/flags/default.svg';
 
