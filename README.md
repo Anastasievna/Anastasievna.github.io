@@ -1,2 +1,1 @@
-# JavaRush
-JavaRush
+# Сеть спешелти-кофеен "Third Wave".
