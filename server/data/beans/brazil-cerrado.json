@@ -9,18 +9,10 @@
     "process": "Natural",
     "scaScore": 82.5,
     "region": "Minas Gerais",
-    "variety": [
-      "Mundo Novo",
-      "Catuai"
-    ]
+    "variety": ["Mundo Novo", "Catuai"]
   },
   "flavorProfile": {
-    "notes": [
-      "Hazelnut",
-      "Milk Chocolate",
-      "Caramel",
-      "Dried Date"
-    ],
+    "notes": ["Hazelnut", "Milk Chocolate", "Caramel", "Dried Date"],
     "acidity": 3,
     "sweetness": 8,
     "bitterness": 4
@@ -35,10 +27,7 @@
       "doseIn": 20,
       "doseOut": 300,
       "timeTotal": "3:00",
-      "steps": [
-        "0:00 - Bloom 60g",
-        "0:45 - Pour to 300g"
-      ]
+      "steps": ["0:00 - Bloom 60g", "0:45 - Pour to 300g"]
     },
     {
       "id": "r2",

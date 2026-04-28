@@ -39,7 +39,7 @@ export type beanType = {
   details: beanDetailsType;
   flavorProfile: flavorType;
   recipes: recipeType[];
-  path?: string
+  path?: string;
 };
 
 export type shortBeanType = Pick<

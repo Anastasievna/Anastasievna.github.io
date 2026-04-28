@@ -1,14 +1,18 @@
-import { apiClient } from './api.js';
-import { renderBeanList, renderBeanDetails, applyTranslations } from './render.js';
+import { apiClient } from "./api.js";
+import {
+  renderBeanList,
+  renderBeanDetails,
+  applyTranslations,
+} from "./render.js";
 
 // STATE
 let currentBeanId = null;
 let currentType = null;
 
 // INIT
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadList();
-    handleLangChange('en');
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadList();
+  handleLangChange("en");
 });
 
 // =========================================================
@@ -16,103 +20,115 @@ document.addEventListener('DOMContentLoaded', async () => {
 // =========================================================
 
 // Language Switcher
-document.getElementById('lang-select').addEventListener('change', (e) => handleLangChange(e.target.value));
+document
+  .getElementById("lang-select")
+  .addEventListener("change", (e) => handleLangChange(e.target.value));
 
-const langSelect = document.getElementById('lang-select');
-const langFlag = document.getElementById('current-lang-flag');
-const langText = document.getElementById('lang-text');
+const langSelect = document.getElementById("lang-select");
+const langFlag = document.getElementById("current-lang-flag");
+const langText = document.getElementById("lang-text");
 
 function updateFlagIcon(lang) {
-    const iconName = (lang === 'en') ? 'gb' : lang;
+  const iconName = lang === "en" ? "gb" : lang;
 
-    langFlag.src = `assets/flags/${iconName}.svg`;
+  langFlag.src = `assets/flags/${iconName}.svg`;
 
-    langText.textContent = lang.toUpperCase();
+  langText.textContent = lang.toUpperCase();
 }
 
-langSelect.addEventListener('change', (e) => {
-    const newLang = e.target.value;
-    handleLangChange(newLang);
-    updateFlagIcon(newLang);
+langSelect.addEventListener("change", (e) => {
+  const newLang = e.target.value;
+  handleLangChange(newLang);
+  updateFlagIcon(newLang);
 });
 
 // Init
-updateFlagIcon('en');
+updateFlagIcon("en");
 
 // Toolbar Actions
-document.getElementById('btn-add-bean').addEventListener('click', () => openModal());
+document
+  .getElementById("btn-add-bean")
+  .addEventListener("click", () => openModal());
 
-document.getElementById('btn-delete').addEventListener('click', async () => {
-    if(!currentBeanId) return;
-    if(confirm('Are you sure you want to delete this bean?')) {
-        await apiClient.deleteBean(currentBeanId);
-        resetView();
-        await loadList();
-    }
+document.getElementById("btn-delete").addEventListener("click", async () => {
+  if (!currentBeanId) return;
+  if (confirm("Are you sure you want to delete this bean?")) {
+    await apiClient.deleteBean(currentBeanId);
+    resetView();
+    await loadList();
+  }
 });
 
-document.getElementById('btn-edit').addEventListener('click', async () => {
-    if(!currentBeanId) return;
-    const bean = await apiClient.getBeanById(currentBeanId);
-    openModal(bean);
+document.getElementById("btn-edit").addEventListener("click", async () => {
+  if (!currentBeanId) return;
+  const bean = await apiClient.getBeanById(currentBeanId);
+  openModal(bean);
 });
 
-document.getElementById('btn-cancel').addEventListener('click', closeModal);
+document.getElementById("btn-cancel").addEventListener("click", closeModal);
 // ----------------------------------------------------
 
 // Form Submit
-document.getElementById('btn-save').addEventListener('click', async (e) => {
-    e.preventDefault();
+document.getElementById("btn-save").addEventListener("click", async (e) => {
+  e.preventDefault();
 
-    const formData = {
-        title: document.getElementById('form-title').value,
-        type: document.getElementById('form-type').value,
-        country: document.getElementById('form-country').value,
-        description: document.getElementById('form-description').value,
-        imageUrl: document.getElementById('form-image').value,
-        roasterComment: document.getElementById('form-comment').value,
+  const formData = {
+    title: document.getElementById("form-title").value,
+    type: document.getElementById("form-type").value,
+    country: document.getElementById("form-country").value,
+    description: document.getElementById("form-description").value,
+    imageUrl: document.getElementById("form-image").value,
+    roasterComment: document.getElementById("form-comment").value,
 
-        details: {
-            process: document.getElementById('form-process').value,
-            scaScore: Number(document.getElementById('form-score').value) || 0,
-            region: document.getElementById('form-region').value || 'Unknown',
-            variety: document.getElementById('form-variety').value.split(',').map(s => s.trim())
-        },
-        flavorProfile: {
-            notes: document.getElementById('form-notes').value.split(',').map(s => s.trim()),
-            acidity: Number(document.getElementById('form-acidity').value),
-            sweetness: Number(document.getElementById('form-sweetness').value),
-            bitterness: Number(document.getElementById('form-bitterness').value)
-        }
-    };
+    details: {
+      process: document.getElementById("form-process").value,
+      scaScore: Number(document.getElementById("form-score").value) || 0,
+      region: document.getElementById("form-region").value || "Unknown",
+      variety: document
+        .getElementById("form-variety")
+        .value.split(",")
+        .map((s) => s.trim()),
+    },
+    flavorProfile: {
+      notes: document
+        .getElementById("form-notes")
+        .value.split(",")
+        .map((s) => s.trim()),
+      acidity: Number(document.getElementById("form-acidity").value),
+      sweetness: Number(document.getElementById("form-sweetness").value),
+      bitterness: Number(document.getElementById("form-bitterness").value),
+    },
+  };
 
-    const id = document.getElementById('form-id').value;
+  const id = document.getElementById("form-id").value;
 
-    if (id) {
-       await apiClient.updateBean(id, formData);
-    } else {
-        await apiClient.createBean(formData);
-    }
+  if (id) {
+    await apiClient.updateBean(id, formData);
+  } else {
+    await apiClient.createBean(formData);
+  }
 
-    closeModal();
-    await loadList();
+  closeModal();
+  await loadList();
 });
 
 // Category Tabs (Bean / Beverage / Dessert)
-document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', async(e) => {
-        // Убираем active у всех
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        // Добавляем нажатой (ищем ближайшую кнопку, т.к. клик может быть по иконке внутри)
-        const button = e.target.closest('.nav-btn');
-        button.classList.add('active');
+document.querySelectorAll(".nav-btn").forEach((btn) => {
+  btn.addEventListener("click", async (e) => {
+    // Убираем active у всех
+    document
+      .querySelectorAll(".nav-btn")
+      .forEach((b) => b.classList.remove("active"));
+    // Добавляем нажатой (ищем ближайшую кнопку, т.к. клик может быть по иконке внутри)
+    const button = e.target.closest(".nav-btn");
+    button.classList.add("active");
 
-        // фильтрация
-        console.log('Filter by:', button.dataset.type);
-        currentType = button.dataset.type;
-        resetView();
-        await loadList();
-    });
+    // фильтрация
+    console.log("Filter by:", button.dataset.type);
+    currentType = button.dataset.type;
+    resetView();
+    await loadList();
+  });
 });
 
 // =========================================================
@@ -120,38 +136,39 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
 // =========================================================
 
 async function loadList() {
-    const listContainer = document.getElementById('bean-list');
-    listContainer.innerHTML = '<div class="loading">Loading...</div>';
+  const listContainer = document.getElementById("bean-list");
+  listContainer.innerHTML = '<div class="loading">Loading...</div>';
 
-    const beans = await apiClient.getAllBeans(currentType);
-    if (!beans.find(bean => bean.id === currentBeanId)) resetView();
+  const beans = await apiClient.getAllBeans(currentType);
+  if (!beans.find((bean) => bean.id === currentBeanId)) resetView();
 
-    if (!beans || beans.length === 0) {
-        listContainer.innerHTML = '<div class="empty-msg">No beans found. Add one!</div>';
-        return;
-    }
+  if (!beans || beans.length === 0) {
+    listContainer.innerHTML =
+      '<div class="empty-msg">No beans found. Add one!</div>';
+    return;
+  }
 
-    renderBeanList(beans, currentBeanId, async (id) => {
-        currentBeanId = id;
-        const bean = await apiClient.getBeanById(id);
-        document.getElementById('placeholder-view').classList.add('hidden');
-        document.getElementById('details-view').classList.remove('hidden');
-        renderBeanDetails(bean);
-    });
+  renderBeanList(beans, currentBeanId, async (id) => {
+    currentBeanId = id;
+    const bean = await apiClient.getBeanById(id);
+    document.getElementById("placeholder-view").classList.add("hidden");
+    document.getElementById("details-view").classList.remove("hidden");
+    renderBeanDetails(bean);
+  });
 }
 
 async function handleLangChange(lang) {
-    const translations = await apiClient.getTranslations(lang);
+  const translations = await apiClient.getTranslations(lang);
 
-    if(translations && Object.keys(translations).length > 0) {
-        applyTranslations(translations);
-    }
+  if (translations && Object.keys(translations).length > 0) {
+    applyTranslations(translations);
+  }
 }
 
 function resetView() {
-    currentBeanId = null;
-    document.getElementById('placeholder-view').classList.remove('hidden');
-    document.getElementById('details-view').classList.add('hidden');
+  currentBeanId = null;
+  document.getElementById("placeholder-view").classList.remove("hidden");
+  document.getElementById("details-view").classList.add("hidden");
 }
 
 // =========================================================
@@ -159,48 +176,53 @@ function resetView() {
 // =========================================================
 
 function openModal(bean = null) {
-    console.log('open modal');
-    const modal = document.getElementById('bean-modal');
-    modal.classList.remove('hidden'); // Убираем класс hidden, чтобы показать окно
+  console.log("open modal");
+  const modal = document.getElementById("bean-modal");
+  modal.classList.remove("hidden"); // Убираем класс hidden, чтобы показать окно
 
-    if (bean) {
-        document.getElementById('modal-title').textContent = 'Edit Item';
-        document.getElementById('form-id').value = bean.id;
+  if (bean) {
+    document.getElementById("modal-title").textContent = "Edit Item";
+    document.getElementById("form-id").value = bean.id;
 
-        // Basic
-        document.getElementById('form-title').value = bean.title;
-        document.getElementById('form-type').value = bean.type;
-        document.getElementById('form-country').value = bean.country;
-        document.getElementById('form-image').value = bean.imageUrl || 'assets/flags/default.svg';
-        document.getElementById('form-description').value = bean.description;
-        document.getElementById('form-comment').value = bean.roasterComment || '';
+    // Basic
+    document.getElementById("form-title").value = bean.title;
+    document.getElementById("form-type").value = bean.type;
+    document.getElementById("form-country").value = bean.country;
+    document.getElementById("form-image").value =
+      bean.imageUrl || "assets/flags/default.svg";
+    document.getElementById("form-description").value = bean.description;
+    document.getElementById("form-comment").value = bean.roasterComment || "";
 
-        // Details
-        document.getElementById('form-score').value = bean.details.scaScore;
-        document.getElementById('form-process').value = bean.details.process;
-        document.getElementById('form-region').value = bean.details.region || '';
-        document.getElementById('form-variety').value = bean.details.variety ? bean.details.variety.join(', ') : '';
+    // Details
+    document.getElementById("form-score").value = bean.details.scaScore;
+    document.getElementById("form-process").value = bean.details.process;
+    document.getElementById("form-region").value = bean.details.region || "";
+    document.getElementById("form-variety").value = bean.details.variety
+      ? bean.details.variety.join(", ")
+      : "";
 
-        // Flavor
-        document.getElementById('form-notes').value = bean.flavorProfile.notes.join(', ');
-        document.getElementById('form-acidity').value = bean.flavorProfile.acidity;
-        document.getElementById('form-sweetness').value = bean.flavorProfile.sweetness;
-        document.getElementById('form-bitterness').value = bean.flavorProfile.bitterness;
+    // Flavor
+    document.getElementById("form-notes").value =
+      bean.flavorProfile.notes.join(", ");
+    document.getElementById("form-acidity").value = bean.flavorProfile.acidity;
+    document.getElementById("form-sweetness").value =
+      bean.flavorProfile.sweetness;
+    document.getElementById("form-bitterness").value =
+      bean.flavorProfile.bitterness;
+  } else {
+    document.getElementById("modal-title").textContent = "Add New Item";
+    document.getElementById("bean-form").reset();
+    document.getElementById("form-id").value = "";
 
-    } else {
-        document.getElementById('modal-title').textContent = 'Add New Item';
-        document.getElementById('bean-form').reset();
-        document.getElementById('form-id').value = '';
-
-        // Defaults
-        document.getElementById('form-image').value = 'assets/flags/default.svg';
-        document.getElementById('form-acidity').value = 5;
-        document.getElementById('form-sweetness').value = 5;
-        document.getElementById('form-bitterness').value = 5;
-    }
+    // Defaults
+    document.getElementById("form-image").value = "assets/flags/default.svg";
+    document.getElementById("form-acidity").value = 5;
+    document.getElementById("form-sweetness").value = 5;
+    document.getElementById("form-bitterness").value = 5;
+  }
 }
 
 function closeModal() {
-    const modal = document.getElementById('bean-modal');
-    modal.classList.add('hidden'); // Добавляем класс hidden, чтобы скрыть
+  const modal = document.getElementById("bean-modal");
+  modal.classList.add("hidden"); // Добавляем класс hidden, чтобы скрыть
 }

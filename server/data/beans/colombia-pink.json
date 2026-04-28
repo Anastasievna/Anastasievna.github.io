@@ -9,17 +9,10 @@
     "process": "Anaerobic",
     "scaScore": 86,
     "region": "Huila",
-    "variety": [
-      "Pink Bourbon"
-    ]
+    "variety": ["Pink Bourbon"]
   },
   "flavorProfile": {
-    "notes": [
-      "Watermelon",
-      "Strawberry Yogurt",
-      "Lime",
-      "Brown Sugar"
-    ],
+    "notes": ["Watermelon", "Strawberry Yogurt", "Lime", "Brown Sugar"],
     "acidity": 7,
     "sweetness": 7,
     "bitterness": 3
@@ -34,10 +27,7 @@
       "doseIn": 16,
       "doseOut": 250,
       "timeTotal": "2:45",
-      "steps": [
-        "0:00 - Bloom 50g",
-        "0:40 - Center Pour to 250g"
-      ]
+      "steps": ["0:00 - Bloom 50g", "0:40 - Center Pour to 250g"]
     },
     {
       "id": "r2",

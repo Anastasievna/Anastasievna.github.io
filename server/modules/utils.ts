@@ -1,5 +1,5 @@
 import fsPromises from "fs/promises";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 import path from "node:path";
 import { dataTypes } from "#types/index";
 
@@ -11,27 +11,40 @@ export function createData<T>(type: dataTypes, data: T) {
 }
 
 export function getPath(file: string) {
-    const pathToFile = path.join(__dirname,'../', file)
-    return pathToFile
+  const pathToFile = path.join(__dirname, "../", file);
+  return pathToFile;
 }
 
-export async function createFile(content: string, pathName: string, isFullPath: boolean = false) {
+export async function createFile(
+  content: string,
+  pathName: string,
+  isFullPath: boolean = false,
+) {
   try {
     const fullPathName = !isFullPath ? getPath(pathName) : pathName;
     await fsPromises.writeFile(fullPathName, content);
     return createData(dataTypes.SUCCESS, "File created");
   } catch (err) {
-    return createData(dataTypes.ERROR, (err as { message: string })?.message || "File not created",);
+    return createData(
+      dataTypes.ERROR,
+      (err as { message: string })?.message || "File not created",
+    );
   }
 }
 
-export async function removeFile(pathName: string, isFullPath: boolean = false) {
+export async function removeFile(
+  pathName: string,
+  isFullPath: boolean = false,
+) {
   try {
     const fullPathName = !isFullPath ? getPath(pathName) : pathName;
     await fsPromises.unlink(fullPathName);
     return createData(dataTypes.SUCCESS, "File deleted");
   } catch (err) {
-    return createData(dataTypes.ERROR, (err as { message: string })?.message || "File not deleted",);
+    return createData(
+      dataTypes.ERROR,
+      (err as { message: string })?.message || "File not deleted",
+    );
   }
 }
 

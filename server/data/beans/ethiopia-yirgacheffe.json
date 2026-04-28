@@ -9,19 +9,10 @@
     "process": "Washed",
     "scaScore": 87.7,
     "region": "Gedeo Zone",
-    "variety": [
-      "Kurume",
-      "Dega",
-      "Wolisho"
-    ]
+    "variety": ["Kurume", "Dega", "Wolisho"]
   },
   "flavorProfile": {
-    "notes": [
-      "Jasmine",
-      "Peach",
-      "Earl Grey",
-      "Lemon"
-    ],
+    "notes": ["Jasmine", "Peach", "Earl Grey", "Lemon"],
     "acidity": 8,
     "sweetness": 6,
     "bitterness": 3

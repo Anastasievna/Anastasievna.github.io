@@ -9,17 +9,10 @@
     "process": "Natural",
     "scaScore": 86.5,
     "region": "Kayanza",
-    "variety": [
-      "Red Bourbon"
-    ]
+    "variety": ["Red Bourbon"]
   },
   "flavorProfile": {
-    "notes": [
-      "Plum",
-      "Blueberry",
-      "Red Wine",
-      "Dark Cherry"
-    ],
+    "notes": ["Plum", "Blueberry", "Red Wine", "Dark Cherry"],
     "acidity": 6,
     "sweetness": 8,
     "bitterness": 3
@@ -34,10 +27,7 @@
       "doseIn": 16,
       "doseOut": 250,
       "timeTotal": "2:45",
-      "steps": [
-        "0:00 - Bloom 50g",
-        "0:45 - Pour to 250g"
-      ]
+      "steps": ["0:00 - Bloom 50g", "0:45 - Pour to 250g"]
     },
     {
       "id": "r2",
