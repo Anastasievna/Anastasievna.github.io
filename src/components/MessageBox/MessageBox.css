@@ -1,0 +1,33 @@
+.message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  height: 60px;
+  padding: 12px 32px 12px 12px;
+  text-align: left;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+
+.message__text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+}
+
+.message--success {
+  background: #C4F4D0;
+}
+
+.message--error {
+  background: #FFE27D;
+}
+
+.message > img {
+  width: 20px;
+}

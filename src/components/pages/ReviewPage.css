@@ -1,0 +1,210 @@
+.review {
+  background-color: #f5f5f5;
+}
+
+.review__container {
+  padding: 32px 400px 128px;
+}
+
+.review-title {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 100%;
+  color: #5e4ae3;
+}
+
+.review__train-card {
+  margin-top: 32px;
+  padding: 32px 24px;
+  background-color: #5e4ae31a;
+  border: 1px solid #01040080;
+  border-radius: 10px;
+}
+
+.review__train-card-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #010400;
+}
+
+.review__train-card-block {
+  margin: 16px 0px 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review__train-card-train {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #010400;
+}
+
+.review__train-card-tariff {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #5e4ae3;
+}
+
+.review__passengers {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.review__foods {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.review__foods-link {
+  margin-top: 24px;
+  width: 100%;
+  text-align: right;
+  color: #5e4ae3;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  text-decoration: none;
+}
+
+.review__foods-link:hover {
+  text-decoration: underline;
+}
+
+.review__offers {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.review__card {
+  width: calc(50% - 16px);
+  padding: 32px 24px;
+  background-color: #ffffff;
+  border: 1px solid #01040080;
+  border-radius: 10px;
+}
+
+.review__card:last-of-type {
+  width: 100%;
+}
+
+.review__card-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #010400;
+}
+
+.review__card-category, .review__card-details {
+  margin-bottom: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  color: #01040080;
+}
+
+.review__card-details {
+  padding-left: 10px;
+  font-size: 11px;
+}
+
+.discount {
+  margin-bottom: 0px;
+  font-weight: 800;
+}
+
+.review__card-summary {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #010400;
+}
+
+.review__card-input {
+  padding: 10px 25px;
+  height: 41px;
+  border: none;
+  border-bottom: 1px solid #01040080;
+}
+
+.review__card-input:focus {
+  outline: none;
+}
+
+.review__card-apply {
+  position: relative;
+  left: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.review__card-btn {
+  background-color: #ffffff;
+  padding: 10px 25px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #5e4ae3;
+  border-radius: 10px;
+}
+
+.review__book {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.review__book-disclaim {
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  color: #01040080;
+}
+
+.review__policy {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  line-height: 100%;
+  color: #808080;
+  gap: 30px;
+}
+
+.review__book-btn {
+  width: 400px;
+  background-color: #5E4AE3;
+  text-align: center;
+  padding: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  border: 1px solid #5E4AE3;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.cancel-btn {
+  background-color: #ffffff;
+  color: #FF6060;
+  border-color: #FF6060;
+}
+
