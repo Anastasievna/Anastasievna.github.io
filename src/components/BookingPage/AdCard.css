@@ -1,0 +1,17 @@
+.ad {
+  width: 100%;
+  padding: 60px 25px;
+  border-radius: 10px;
+}
+
+.ad__title {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  text-decoration: none;
+}
+
+.ad__title:hover {
+  text-decoration: underline;
+}

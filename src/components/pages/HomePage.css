@@ -1,0 +1,51 @@
+.main {
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/background.jpg) no-repeat center;
+  background-color: black;
+  background-position: center -200px;
+  padding: 96px 286px 233px;
+}
+
+.main__title {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 81px;
+  line-height: 100%;
+}
+
+.main__text {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+}
+
+.main__form {
+  padding-top: 60px;
+  padding-left: 114px;
+  padding-right: 114px;
+}
+
+.main__stations-block {
+  padding-top: 24px;
+  display: flex;
+  gap: 32px;
+}
+
+.main__dates-block {
+  padding-top: 24px;
+}
+
+.main__btn {
+  margin-top: 24px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #5e4ae3;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -1,0 +1,49 @@
+.passengers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 3px 24px;
+  border-radius: 10px;
+}
+
+.passengers__radio-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.passengers__radio-btn input[type="radio"]:hover:not(:disabled) {
+  cursor: pointer;
+}
+
+.passengers__radio-btn input[type="radio"]:checked {
+  accent-color: #5e4ae3;
+}
+
+.passengers__user-icon {
+  width: 22px;
+}
+
+.passengers__btn-icon {
+  width: 12px;
+}
+
+.passengers__counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.passengers__count {
+  width: 20px;
+  text-align: center;
+}
+
+.passengers__counter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: inherit;
+}

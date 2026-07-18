@@ -1,0 +1,141 @@
+.calendar {
+  width: 640px;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  top: 12px;
+  padding: 24px 32px;
+}
+
+.calendar__month {
+  width: 49%;
+}
+
+.calendar__month-box {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.calendar__block {
+  position: relative;
+}
+
+.calendar__btns {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  right: 0px;
+}
+
+.calendar__btn {
+  max-width: 80px;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: rgba(32, 32, 32, 0.5);
+  background-color: white;
+}
+
+.calendar__btn.active {
+  background-color: #5e4ae3;
+  color: white;
+}
+
+.calendar__btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 8px 0.5px rgba(0, 0, 0, 0.25);
+}
+
+.calendar__month-title {
+  display: flex;
+  padding: 5px;
+}
+.calendar__month-title p {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.calendar__month-title-btn {
+  width: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.calendar__month-title .prev {
+  background: url(../../assets/images/prev.png) center no-repeat;
+}
+.calendar__month-title .next {
+  background: url(../../assets/images/next.png) center no-repeat;
+}
+
+.calendar__days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar__days-title {
+  display: flex;
+  width: 100%;
+}
+
+.calendar__day-title {
+  width: 14.2857142857%;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5px;
+  color: #202020;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.calendar__day-title--disabled {
+  color: lightgrey;
+  cursor: default;
+}
+
+.calendar__day-title.active span {
+  color: white;
+  z-index: 10;
+}
+
+.calendar__day-title.active.right {
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #ffffff 50%,
+    #f5f5f5 50%,
+    #f5f5f5 100%
+  );
+}
+
+.calendar__day-title.active.left {
+  background: linear-gradient(
+    to left,
+    #ffffff 0%,
+    #ffffff 50%,
+    rgb(245, 245, 245) 50%,
+    rgb(245, 245, 245) 100%
+  );
+}
+
+.calendar__day-title.between {
+  background: #f5f5f5;
+}
+
+.calendar__day-title.active::after {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  background-color: #5e4ae3 !important;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
