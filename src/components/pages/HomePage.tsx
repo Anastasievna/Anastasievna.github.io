@@ -9,6 +9,7 @@ import { setTickets } from "../../store/ticketsSlice";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../store/storeHooks";
 import "./HomePage.css";
+import { STATIONS } from "../../constans/stations";
 
 function HomePage() {
   const dispatch = useAppDispatch();
@@ -40,6 +41,16 @@ function HomePage() {
     ) {
       setError("Enter required fields!");
       return;
+    } else if (
+      !STATIONS.find(
+        (station) => station.code === tickets.arrivalStation?.code,
+      ) ||
+      !STATIONS.find(
+        (station) => station.code === tickets.departureStation?.code,
+      )
+    ) {
+      setError("Enter valid stations!");
+      return;
     } else {
       setError("");
     }
@@ -64,7 +75,7 @@ function HomePage() {
           passengers={passengers}
           setPassengers={setPassengers}
           trip={trip}
-          setTrip={setTrip}
+          setTrip={setTrip} //changeTrip(value)}
         />
         <div className="main__stations-block">
           <StationInput

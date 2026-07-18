@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { IStation } from "../../types/index";
-import { indianRailwayStations } from "../../constans/stations";
+import { STATIONS } from "../../constans/stations";
 import "./StationInput.css";
 
 interface IStationProps {
@@ -23,7 +23,7 @@ function StationInput({
   const changeInput = (text: string) => {
     if (!isActive) return;
     const stations =
-      indianRailwayStations.filter(
+      STATIONS.filter(
         (station) =>
           !!text && station.name.toLowerCase().startsWith(text?.toLowerCase()),
       ) ?? [];

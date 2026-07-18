@@ -1,4 +1,4 @@
-export const indianRailwayStations = [
+export const STATIONS = [
   { name: "New Delhi", code: "NDLS" },
   { name: "Mumbai Central", code: "BCT" },
   { name: "Chennai Central", code: "MAS" },

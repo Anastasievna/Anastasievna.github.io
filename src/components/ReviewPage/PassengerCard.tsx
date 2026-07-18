@@ -26,29 +26,25 @@ function PassengerCard({ num }: IPassengerCardProps) {
         ? e.currentTarget.value.replace(/[^0-9.]/g, "")
         : e.currentTarget.value;
 
-    setPassenger({
+    const newInfoPassenger = {
       ...passenger,
       [key]: value,
-    });
+    };
+
+    setPassenger(newInfoPassenger);
 
     const passengers: IPassenger[] = tickets?.passengersData
       ? [...tickets.passengersData]
       : [];
 
-    const isFullFilled = Object.values(passenger).every((val) => !!val);
+    const isFullFilled = Object.values(newInfoPassenger).every((val) => !!val);
     const index = passengers.findIndex((passenger) => passenger.id === num);
 
     if (isFullFilled) {
       if (index !== -1) {
-        passengers[index] = {
-          ...passenger,
-          [key]: value,
-        };
+        passengers[index] = newInfoPassenger;
       } else {
-        passengers.push({
-          ...passenger,
-          [key]: value,
-        });
+        passengers.push(newInfoPassenger);
       }
     } else {
       if (index !== -1) passengers.splice(index, 1);

@@ -53,9 +53,6 @@ function BookingPage() {
               endDate={tickets.endDate ? new Date(tickets.endDate) : null}
               endDateIsActive={!!tickets.endDate}
             />
-            {/* <button className="booking__btn" disabled>
-              Tickets, Please!
-            </button> */}
           </div>
         </div>
         <div className="booking__ad">
@@ -73,7 +70,7 @@ function BookingPage() {
           <p className="booking__trains-title">Available Trains</p>
           <div className="booking__trains-block">
             {TRAINS.map((train: ITrain) => (
-              <TrainCard {...train} />
+              <TrainCard key={train.id} {...train} />
             ))}
           </div>
         </div>

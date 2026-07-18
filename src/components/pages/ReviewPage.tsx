@@ -15,7 +15,7 @@ function ReviewPage() {
   const [code, setCode] = useState("");
   const [error, setError] = useState<string>("");
 
-  const applyCode = () =>
+  const applyCode = () => {
     dispatch(
       addToTickets({
         key: "promoCode",
@@ -23,9 +23,36 @@ function ReviewPage() {
       }),
     );
 
+    const input = document.querySelector("#code");
+    const btnApply = document.querySelector("#btn_apply");
+    const btnClear = document.querySelector("#btn_clear");
+
+    btnApply?.classList.add("hide");
+    btnClear?.classList.remove("hide");
+    input?.setAttribute("disabled", "true");
+  }
+
+  const clearCode = () => {
+    setCode("");
+
+    dispatch(
+      addToTickets({
+        key: "promoCode",
+        value: "",
+      }),
+    );
+
+    const input = document.querySelector("#code");
+    const btnApply = document.querySelector("#btn_apply");
+    const btnClear = document.querySelector("#btn_clear");
+
+    btnApply?.classList.remove("hide");
+    btnClear?.classList.add("hide");
+    input?.removeAttribute("disabled");
+  }
+
   const changeCode = (promo: string) => {
     setCode(promo);
-    if (!!price.discount && !promo) applyCode();
   };
 
   const changeExtraBaggage = () =>
@@ -48,7 +75,6 @@ function ReviewPage() {
   };
 
   useEffect(() => {
-    console.log("tick", tickets);
     if (!tickets || !tickets.train) navigate("/");
   }, []);
 
@@ -100,6 +126,7 @@ function ReviewPage() {
           <div className="review__card">
             <p className="review__card-title">Apply Code</p>
             <input
+              id="code"
               type="text"
               className="review__card-input"
               placeholder="Enter Code"
@@ -107,10 +134,13 @@ function ReviewPage() {
               onChange={(e) => changeCode(e.target.value.toUpperCase())}
             />
             {code && (
-              <span className="review__card-apply" onClick={applyCode}>
+              <span id="btn_apply" className="review__card-apply" onClick={applyCode}>
                 {">"}
               </span>
             )}
+            <span id="btn_clear" className="review__card-apply hide" onClick={clearCode}>
+              {"x"}
+            </span>
           </div>
           <div className="review__card">
             <p className="review__card-title">Extra Baggage</p>
@@ -131,8 +161,8 @@ function ReviewPage() {
                 </div>
                 {!!tickets.food?.length &&
                   tickets.food.map((item) => (
-                    <div className="review__card-details">
-                      <span key={item.id}>
+                    <div className="review__card-details" key={item.id}>
+                      <span>
                         {item.name} x {item.counter}
                       </span>
                       <span>₹{(item.price * item.counter).toFixed(2)}</span>

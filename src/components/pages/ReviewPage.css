@@ -208,3 +208,6 @@
   border-color: #FF6060;
 }
 
+.hide {
+  display: none;
+}

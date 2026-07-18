@@ -37,14 +37,14 @@ function DatesInputs({
         <div className="dates__block">
           <div className="dates__item">
             <div className="dates__item-input" onClick={openCalendar}>
-              <img className="calendar-icon" src={calendar} alt="calendar" />
+              <img className="calendar-icon" style={{cursor: isActive ? "pointer" : "default"}} src={calendar} alt="calendar" />
               {!startDate && <span className="dates__placeholder">Depart</span>}
             </div>
             {startDate && <p>{displayDate(startDate)}</p>}
           </div>
           <div className="dates__item">
             <div className={`dates__item-input ${!endDateIsActive && "disabled"}`} onClick={openCalendar}>
-              <img className="calendar-icon" src={calendar} alt="calendar" />
+              <img className="calendar-icon" style={{cursor: isActive && endDateIsActive ? "pointer" : "default"}} src={calendar} alt="calendar" />
               {!endDate && <span className="dates__placeholder">Return</span>}
             </div>
             {endDate && <p>{displayDate(endDate)}</p>}

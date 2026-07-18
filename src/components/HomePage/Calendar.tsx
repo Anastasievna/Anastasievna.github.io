@@ -52,6 +52,12 @@ function Calendar({
   });
   const [selectedDays, setSelectedDays] = useState([startDate, endDate]);
 
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (!!selectedDays[1] && !isRangeCalendar)
+      setSelectedDays([selectedDays[0], null]);
+  }, [isRangeCalendar]);
+
   const getMonth = useCallback(
     (date: { month: number; year: number }) => {
       const allDays: IDay[] = [];
@@ -113,11 +119,12 @@ function Calendar({
 
       return allDays;
     },
-    [isRangeCalendar, selectedDays],
+    [endDate, isRangeCalendar, selectedDays],
   );
 
   const selectedDay = (day: IDay) => {
-    if (!day.date) return;
+    if (!day.date || day.classList.includes("calendar__day-title--disabled"))
+      return;
     if (
       (isRangeCalendar && selectedDays[0] && selectedDays[1]) ||
       (!isRangeCalendar && selectedDays[0])
