@@ -1,0 +1,36 @@
+<header>
+  <div class="header-container">
+    <a routerLink="/home" class="header__logo">
+      <img src="/assets/img/logo.svg" alt="The Scoville Inferno Logo" />
+      <p class="logo-text">The Scoville Inferno</p>
+    </a>
+    <nav class="header__nav">
+      <ul>
+        @for (link of links; track $index) {
+          <li>
+            <a [routerLink]="link.url" routerLinkActive="active">{{ link.title }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    @if (!authService.currentUserId) {
+      <div class="header__auth-buttons" id="auth-guest">
+        <a routerLink="/login" class="button button--secondary">Sign in</a>
+        <a routerLink="/register" class="button button--primary">Register</a>
+      </div>
+    } @else {
+      <div class="header__user-actions" id="auth-user">
+        <a routerLink="/account/orders" class="user-icon">
+          <img src="/assets/img/User_alt.svg" alt="User Account" />
+        </a>
+        <a routerLink="/cart" class="cart-icon">
+          @if (cartTotalAmount$ | async; as cartTotalAmount) {
+            <span class="cart-total">{{ cartTotalAmount }}</span>
+          }
+          <img src="assets/img/Shopping_bag.svg" alt="Shopping Cart" />
+        </a>
+      </div>
+    }
+  </div>
+</header>

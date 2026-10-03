@@ -1,0 +1,28 @@
+<div class="cart-item">
+  <img [src]="cartProduct?.image" [alt]="cartProduct?.name" class="cart-item__image" />
+  <div class="cart-item__body">
+    <div class="cart-item__details">
+      <h2 class="cart-item__name">{{ cartProduct?.name }}</h2>
+      <div class="cart-item__price-info">
+        <p class="cart-item__price">
+          ${{ cartProduct?.totalPrice ? cartProduct?.totalPrice?.toFixed(2) : '' }}
+        </p>
+        <span class="cart-item__price-tag">{{ cartProduct?.priceTag }}</span>
+      </div>
+    </div>
+    <div class="cart-item__actions">
+      <div class="cart-item__quantity-selector">
+        <button class="quantity-btn-cart" (click)="decreaseProduct()">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <span class="quantity-value-cart">{{ cartProduct?.amount }}</span>
+        <button class="quantity-btn-cart" (click)="increaseProduct()">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      <button class="button--remove" (click)="removeProduct()">
+        Remove <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+</div>

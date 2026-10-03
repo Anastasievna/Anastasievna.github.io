@@ -1,0 +1,540 @@
+{
+  "users": [
+    {
+      "email": "user123@mail.ru",
+      "password": "qwerty",
+      "id": "neqMul8550A"
+    },
+    {
+      "email": "user12@mail.ru",
+      "password": "user123",
+      "id": "_I5unwJJExA"
+    },
+    {
+      "email": "user1@mail.ru",
+      "password": "96738331d",
+      "id": "nQFgAC150dE"
+    }
+  ],
+  "users-details": [
+    {
+      "userId": "neqMul8550A",
+      "name": "Anastasia",
+      "phone": "911113",
+      "city": "Spb",
+      "address": "Addess 1, d 3",
+      "id": "lkBagDS2xl4"
+    },
+    {
+      "userId": "_I5unwJJExA",
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "id": "cZAE9MmCcxY"
+    },
+    {
+      "userId": "nQFgAC150dE",
+      "name": "Alex",
+      "phone": "675321",
+      "city": "Spb",
+      "address": "Adress 1, d 5",
+      "id": "P2begXRPNN8"
+    }
+  ],
+  "orders": [
+    {
+      "id": "hACdRdlsNww",
+      "userId": "neqMul8550A",
+      "orderNumber": "123232122035",
+      "date": "Mar 7, 2025",
+      "typePay": "Cash On Delivery",
+      "status": "Delivered",
+      "total": 120
+    },
+    {
+      "userId": "neqMul8550A",
+      "orderNumber": "123232122036",
+      "date": "Mar 7, 2025",
+      "typePay": "Digital Wallet",
+      "status": "Delivered",
+      "total": 20,
+      "id": "hACoRdlsNwq"
+    },
+    {
+      "date": "Sep 30, 2026",
+      "orderNumber": "796698975927",
+      "status": "Created",
+      "userId": "neqMul8550A",
+      "typePay": "Cash On Delivery",
+      "total": 39.96,
+      "id": "hACoRdlsNww"
+    },
+    {
+      "date": "Sep 30, 2026",
+      "orderNumber": "801379717340",
+      "status": "Created",
+      "userId": "neqMul8550A",
+      "typePay": "Debit Card On Delivery",
+      "total": 5,
+      "id": "oW4Fy7nxCKg"
+    },
+    {
+      "date": "Oct 2, 2026",
+      "orderNumber": "972421616135",
+      "status": "Created",
+      "userId": "neqMul8550A",
+      "typePay": "Cash On Delivery",
+      "total": 49.47,
+      "id": "N9kneG75mlo"
+    },
+    {
+      "date": "Oct 2, 2026",
+      "orderNumber": "974317926475",
+      "status": "Created",
+      "userId": "neqMul8550A",
+      "typePay": "Debit Card On Delivery",
+      "total": 11.99,
+      "shipping": {
+        "name": "Anastasia",
+        "phone": "911111",
+        "city": "Spb",
+        "address": "4444ор"
+      },
+      "id": "mMFGl4ciRX0"
+    },
+    {
+      "date": "Oct 3, 2026",
+      "orderNumber": "049727670582",
+      "status": "Created",
+      "userId": "neqMul8550A",
+      "typePay": "Cash On Delivery",
+      "total": 26.99,
+      "shipping": {
+        "name": "Alex",
+        "phone": "911111",
+        "city": "Spb",
+        "address": "Addess 3, d 1"
+      },
+      "id": "1Ble-p35pgs"
+    }
+  ],
+  "peppers": [
+    {
+      "id": "1",
+      "name": "Ghost Pepper Powder",
+      "type": "Ground Spices",
+      "agonylevel": "Ring of Fire",
+      "shortdesc": "A lingering heat that will haunt you",
+      "description": "Ghost Pepper, or Bhut Jolokia, is a true legend in the world of heat. Hailing from Northeast India, it was one of the first peppers to breach the 1 million Scoville mark, and its reputation is absolutely earned. Its burn isn't just intense—it's a slow, creeping, all-consuming fire. Don't be fooled by its initial, delicate sweetness and fruity notes. After about 30-45 seconds, the pepper's true nature is unleashed: an intense, merciless wave of fire that will make you question all of your life choices. Our powder is hermetically sealed to preserve maximum freshness and demonic potency. Use it to craft extremely hot chili, sauces, or marinades. Start with microscopic amounts. You have been warned.",
+      "image": "/assets/img/products/Image.png",
+      "price": 6.66,
+      "priceTag": "per 50g",
+      "specification": {
+        "Origin": "India (Assam region)",
+        "Scoville Heat Units(SHU)": "855,000 - 1,041,427",
+        "Aroma Profile": "Smoky, slightly fruity with an earthy undertone",
+        "Recommended Uses": "Use a pinch per dish; great for curries, hot sauces, and chili",
+        "Warning": "Wear gloves when handling; avoid contact with eyes"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "This is the real deal!",
+          "text": "Added a tiny pinch to my chili and it was perfect: smoky, a little fruity, and then the heat just kept building for minutes. A must-have for any serious chilihead!",
+          "authorName": "ChiliHead_27",
+          "authorAvatar": "/assets/img/avatars/avatar1.svg"
+        },
+        {
+          "rating": 4,
+          "heading": "Painfully Delicious",
+          "text": "Beyond the beautiful, brutal heat, there's a really nice fruity flavor. I used it to make a spicy mayo and it's incredible. Just be careful, it's not forgiving.",
+          "authorName": "SpiceMasochist",
+          "authorAvatar": "/assets/img/avatars/avatar2.svg"
+        },
+        {
+          "rating": 1,
+          "heading": "I've Made A Huge Mistake",
+          "text": "My friend dared me. It's been an hour. I can see sounds. My disappointment is immeasurable and my day is ruined. This is a weapon, not a spice.",
+          "authorName": "RegretfulRookie",
+          "authorAvatar": "/assets/img/avatars/avatar2.svg"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mango Habanero Mercy Sauce",
+      "type": "Scorching Sauces",
+      "agonylevel": "Serious Heat",
+      "shortdesc": "Lures you in with sweetness, then bites",
+      "description": "Mango Habanero Mercy Sauce is our love letter to the classic Mexican combination of tropical fruit and fiery chili. We start with ripe, juicy mangoes and ferment them together with vibrant habanero peppers, allowing the flavors to meld and deepen over several weeks. The result is a sauce that plays a delicious trick on your taste buds: the first wave is pure, sunny sweetness, followed half a second later by a bright, sharp habanero bite. The habanero - once the world's hottest pepper, and still one of the most aromatic - brings notes of orange and apricot that pair beautifully with the mango. This sauce is endlessly versatile: drizzle it over fish tacos, brush it onto grilled chicken, or stir it into a cream cheese dip for an instant party upgrade. The name 'Mercy Sauce' is a warning and a promise at the same time.",
+      "image": "/assets/img/products/Image-1.png",
+      "price": 8.5,
+      "priceTag": "per 150ml",
+      "specification": {
+        "Origin": "Mexico / Small-batch crafted",
+        "Scoville Heat Units(SHU)": "15,000 - 30,000",
+        "Aroma Profile": "Sweet tropical fruit upfront, followed by a sharp habanero kick",
+        "Recommended Uses": "Tacos, grilled chicken, shrimp, cream cheese dips",
+        "Warning": "Refrigerate after opening; the sweetness masks the heat - do not chug"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "Sweet trap, painful ending",
+          "text": "The first second tastes like dessert, then the habaneros punch you in the throat. Absolutely addictive on tacos. My whole family is hooked.",
+          "authorName": "SauceCollector_Anna",
+          "authorAvatar": "/assets/img/avatars/avatar3.svg"
+        },
+        {
+          "rating": 5,
+          "heading": "Perfect balance",
+          "text": "I've tried dozens of mango hot sauces and this one actually tastes like mango first, heat second. Fermentation gives it a nice depth. Bottle empties way too fast.",
+          "authorName": "TacoTuesdayFan",
+          "authorAvatar": "/assets/img/avatars/avatar4.svg"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Trinidad Scorpion Venom",
+      "type": "Infernal Extracts",
+      "agonylevel": "Legal Weapon",
+      "shortdesc": "A blistering sting you won't forget",
+      "description": "Trinidad Scorpion Venom is crafted from the Trinidad Moruga Scorpion, a pepper so violent it briefly held the world heat record in 2012 before being dethroned by the Carolina Reaper. Grown in the sun-drenched fields of Trinidad and Tobago, this variety gets its name from the distinctive pointed stinger on the tip of each pod - nature's way of warning you what lies inside. The scorpion's flavor is a beautiful deception: intensely floral and fruity on the nose, reminiscent of apricots and roses, before a scorching, long-lasting burn takes hold and doesn't let go. Our Venom is a crushed pepper mash, preserved in vinegar and salt, which captures the pepper's raw character better than any dried product. Use it as a base for your own extreme hot sauces, or add a knife-tip to a pot of chili and watch your guests' expressions change. This is not food - it is an experience.",
+      "image": "/assets/img/products/Image-2.png",
+      "price": 12.99,
+      "priceTag": "per 60g",
+      "specification": {
+        "Origin": "Trinidad and Tobago",
+        "Scoville Heat Units(SHU)": "1,200,000 - 2,000,000",
+        "Aroma Profile": "Floral and fruity nose masking an immediate scorching burn",
+        "Recommended Uses": "A knife-tip amount per pot; ideal for extreme hot sauces",
+        "Warning": "Contains superhot peppers. Keep away from children and pets"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "The name is not a joke",
+          "text": "I eat Carolina Reapers for breakfast and this still made me sweat. The floral aroma fools you right before the burn hits. Respect this product.",
+          "authorName": "SHU_Hunter",
+          "authorAvatar": "/assets/img/avatars/avatar5.svg"
+        },
+        {
+          "rating": 3,
+          "heading": "Too much for me",
+          "text": "Bought it on a dare. Managed one bite and regretted it for an hour. The quality is clearly great, but this is for serious chiliheads only. Not for my everyday cooking.",
+          "authorName": "MildManneredCook",
+          "authorAvatar": "/assets/img/avatars/avatar6.svg"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Whole Carolina Reapers (10-pack)",
+      "type": "Whole Chilies",
+      "agonylevel": "Legal Weapon",
+      "shortdesc": "A bag full of painful mistakes",
+      "description": "The Carolina Reaper has held the Guinness World Record for the hottest pepper on Earth since 2013, and it shows no signs of giving up the crown. Bred by Ed Currie of the PuckerButt Pepper Company in South Carolina, the Reaper averages 1.64 million Scoville units, with individual pods measured at over 2.2 million - roughly 400 times hotter than a jalapeno. Each pod is a sinister beauty: gnarled, red, crowned with the scorpion-like tail that gives it its name. But beneath the inferno lies genuine flavor - a surprising sweetness with notes of cinnamon and cherry that earned the Reaper its devoted cult following. Our pods are whole, dried, and carefully packed to preserve both appearance and potency. Use them to make your own superhot sauce, grind them into a rub for brave souls, or drop one into a simmering stew (and remember to remove it before serving, unless you hate your guests).",
+      "image": "/assets/img/products/Image-3.png",
+      "price": 9.99,
+      "priceTag": "per 10-pack",
+      "specification": {
+        "Origin": "South Carolina, USA",
+        "Scoville Heat Units(SHU)": "1,400,000 - 2,200,000",
+        "Aroma Profile": "Sweet cinnamon-like nose with a delayed nuclear burn",
+        "Recommended Uses": "Rehydrate for sauces, grind for rubs, or use whole in stews (remove before serving)",
+        "Warning": "World's hottest pepper. Handle with gloves, ventilate the kitchen"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "Ten little grenades",
+          "text": "Each pod is perfectly dried and intact. I used one in a batch of hot sauce and it cleared my sinuses for a week. The other nine sit in my freezer like a threat.",
+          "authorName": "PepperPro_Igor",
+          "authorAvatar": "/assets/img/avatars/avatar7.svg"
+        },
+        {
+          "rating": 5,
+          "heading": "Great for gifting (to enemies)",
+          "text": "Bought these as a joke gift for my brother-in-law who claims nothing is too spicy. He cried. Pods arrived fresh, well-packed, with good color. Quality product.",
+          "authorName": "VengefulSibling",
+          "authorAvatar": "/assets/img/avatars/avatar8.svg"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Crybaby's Cayenne Sauce",
+      "type": "Scorching Sauces",
+      "agonylevel": "Serious Heat",
+      "shortdesc": "A classic way to learn your lesson",
+      "description": "Crybaby's Cayenne Sauce is our tribute to the Louisiana-style hot sauces that started America's love affair with bottled heat. Cayenne peppers have been cultivated for centuries and named after the city of Cayenne in French Guiana - but it was the Cajun kitchens of Louisiana that turned them into a cultural institution. Our sauce follows the traditional formula: aged cayenne peppers, vinegar, garlic, and salt, fermented to develop a bright, clean heat with a pleasant vinegary tang. At 5,000-10,000 SHU it sits comfortably in the 'everyday' category - hot enough to wake up your palate, but tame enough to use generously. This is the bottle that lives on the table next to the salt and pepper, the one you reach for at breakfast, lunch, and dinner. Whether you're a seasoned chilihead or just beginning your journey into the world of heat, Crybaby's will teach you the most important lesson of all: flavor comes first.",
+      "image": "/assets/img/products/Image-4.png",
+      "price": 5,
+      "priceTag": "per 180ml",
+      "specification": {
+        "Origin": "Louisiana style, USA",
+        "Scoville Heat Units(SHU)": "5,000 - 10,000",
+        "Aroma Profile": "Vinegary tang with a clean, bright pepper heat",
+        "Recommended Uses": "Everyday table sauce - eggs, pizza, sandwiches, wings",
+        "Warning": "Deceptively easy to overuse; keep away from unsuspecting guests' food"
+      },
+      "reviews": [
+        {
+          "rating": 4,
+          "heading": "Reliable everyday sauce",
+          "text": "Not the hottest thing in my fridge, but it's the one I reach for most often. Good tang, decent heat, cheap enough to drown your food in. Loses a star for a slightly watery consistency.",
+          "authorName": "BreakfastBurritoGuy",
+          "authorAvatar": "/assets/img/avatars/avatar9.svg"
+        },
+        {
+          "rating": 5,
+          "heading": "Gateway to the hot sauce world",
+          "text": "This was my first real hot sauce and it taught me that heat and flavor can coexist. Now I have a whole shelf of superhots, but Crybaby's still has a reserved spot.",
+          "authorName": "NoviceNadia",
+          "authorAvatar": "/assets/img/avatars/avatar10.svg"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Satan's Lollipops (3-pack)",
+      "type": "Sadistic Blends",
+      "agonylevel": "Serious Heat",
+      "shortdesc": "The sweetest suffering on a stick",
+      "description": "Satan's Lollipops are what happens when a candy shop gets ahold of a chili lab and loses all sense of mercy. Each pack contains three innocent-looking hard candy lollipops - cherry, orange, and apple - that conceal a progressively evil secret: a chili-infused core that releases its heat as you lick your way to the center. The first minute is pure childhood nostalgia, sweet and fruity. Then the warmth begins. Then the burn. Then the existential questioning. The three flavors hide different intensity levels, so you never know exactly which circle of hell you're about to descend into. They make perfect stocking stuffers for the spice lover in your life, unforgettable prank gifts for overconfident friends, or the centerpiece of your next party challenge. Keep a glass of cold milk nearby - and maybe a waiver.",
+      "image": "/assets/img/products/Image-5.png",
+      "price": 7.77,
+      "priceTag": "per 3-pack",
+      "specification": {
+        "Origin": "Handcrafted, small batch",
+        "Scoville Heat Units(SHU)": "1,000 - 50,000 (varies by lollipop)",
+        "Aroma Profile": "Classic fruit candy slowly giving way to building chili heat",
+        "Recommended Uses": "Novelty treat, prank gift, spicy candy challenge",
+        "Warning": "Not for children under 12 or the spice-intolerant"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "Office prank of the year",
+          "text": "Handed these out at work claiming they were regular candy. The expressions were priceless. The cherry one starts innocent and ends in tears. 10/10 would destroy coworkers again.",
+          "authorName": "OfficeMenace",
+          "authorAvatar": "/assets/img/avatars/avatar1.svg"
+        },
+        {
+          "rating": 4,
+          "heading": "Fun, but one is mild",
+          "text": "Two of the three lollipops brought genuine heat and were delicious. The apple one was suspiciously tame - felt like a dud. Still a great gift idea for spice lovers.",
+          "authorName": "CandyCritic",
+          "authorAvatar": "/assets/img/avatars/avatar2.svg"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Deceptively Mild Ancho Powder",
+      "type": "Ground Spices",
+      "agonylevel": "Warming Up",
+      "shortdesc": "Smoky, gentle, and full of lies",
+      "description": "Ancho is the dried form of the poblano pepper, Mexico's most beloved chili, and the quiet backbone of the country's entire cuisine. When fresh poblanos from the Puebla region are left to ripen fully red and then dried in the sun, they transform into something magical: wrinkled, raisin-dark pods with a flavor that has nothing in common with the concept of 'spicy'. Our ancho powder is stone-milled from whole dried pods, preserving the deep, smoky sweetness with notes of dried fruit, chocolate, and coffee. With only 1,000-2,000 SHU, it delivers warmth rather than pain - which is exactly the deception promised on the label. This is the secret ingredient behind authentic moles, complex chili con carne, and rubs that make people ask 'what is that flavor?' Use it generously and often: it is one of the very few products in this catalog that forgives you.",
+      "image": "/assets/img/products/Image-6.png",
+      "price": 4.2,
+      "priceTag": "per 75g",
+      "specification": {
+        "Origin": "Puebla, Mexico",
+        "Scoville Heat Units(SHU)": "1,000 - 2,000",
+        "Aroma Profile": "Deep smoky sweetness with notes of raisin, chocolate and coffee",
+        "Recommended Uses": "Mole, chili con carne, rubs, Mexican stews, adobo marinades",
+        "Warning": "May cause acute disappointment in seekers of extreme heat"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "Secret weapon of my chili",
+          "text": "This is what was missing from my chili recipe. Adds incredible smoky depth without any real heat. My guests keep asking what the secret ingredient is.",
+          "authorName": "MoleMaster_Rosa",
+          "authorAvatar": "/assets/img/avatars/avatar3.svg"
+        },
+        {
+          "rating": 5,
+          "heading": "The lies are true",
+          "text": "Package warned me about deception and it delivered - I expected at least some kick and got pure smoky flavor instead. Honestly not even mad. Incredible in rubs.",
+          "authorName": "BBQ_Boris",
+          "authorAvatar": "/assets/img/avatars/avatar4.svg"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "The Unforgiving Hot Sauce",
+      "type": "Scorching Sauces",
+      "agonylevel": "Ring of Fire",
+      "shortdesc": "Made with scorpion peppers and spite",
+      "description": "The Unforgiving is not a hot sauce in the traditional sense - it is a statement. Crafted in small batches from Trinidad scorpion peppers, ghost peppers, and what we can only describe as concentrated culinary spite, this sauce occupies the narrow territory between 'food' and 'contractual hazard'. The fermentation process tames the peppers just enough to reveal their hidden beauty: a brief, glorious moment of tropical fruit and citrus before the unrelenting burn arrives and stays for the better part of an hour. There are no extracts here, no shortcuts - just an ungodly number of superhot peppers packed into every bottle. A single drop transforms a pot of chili, a batch of wings, or a perfectly good evening. We recommend applying it with the included dropper, never with a spoon, and absolutely never with your fingers. The Unforgiving does not forgive. It never has. It never will.",
+      "image": "/assets/img/products/Image-7.png",
+      "price": 11.99,
+      "priceTag": "per 100ml",
+      "specification": {
+        "Origin": "Craft batch, USA",
+        "Scoville Heat Units(SHU)": "500,000 - 800,000",
+        "Aroma Profile": "Fruity esters for exactly two seconds, then unrelenting burn",
+        "Recommended Uses": "A drop at a time - wings, chili, dare challenges",
+        "Warning": "No capsaicin-neutralizing additives. What burns, stays burned"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "It does not forgive",
+          "text": "One drop on a chicken wing and I saw through time. The name is a legally accurate description. Excellent flavor under the pain if you're brave enough to find it.",
+          "authorName": "BurnSurvivor_Ken",
+          "authorAvatar": "/assets/img/avatars/avatar5.svg"
+        },
+        {
+          "rating": 4,
+          "heading": "Delicious weapon",
+          "text": "This bottle is both a hot sauce and a cry for help. The flavor is genuinely excellent - fruity and complex - but the heat is a war crime. Minus one star because the dropper lid broke.",
+          "authorName": "FlameTaster",
+          "authorAvatar": "/assets/img/avatars/avatar6.svg"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Satan's Kiss Chilies",
+      "type": "Whole Chilies",
+      "agonylevel": "Serious Heat",
+      "shortdesc": "Cute round peppers with a cruel punch",
+      "description": "Bacio di Satana - 'Satan's Kiss' in Italian - is a round, cherry-sized pepper from Calabria, the sun-baked region of southern Italy famous for its passionate relationship with chili. With its plump, glossy appearance, it looks exactly like the sweet cherry peppers you'd find in a jar of antipasti. It is not. One bite reveals the truth: a sharp, immediate heat at 30,000-50,000 SHU, several times hotter than a jalapeno, delivered with fruity, slightly smoky undertones. In Calabrian tradition, these peppers are stuffed with anchovies or cheese, preserved in oil, or sliced over pizza and pasta. Their thick, crunchy walls hold up beautifully to roasting and pickling, making them as versatile as they are deceptive. Handle them with the same caution you'd give their namesake - the kiss is sweet, but it leaves a mark.",
+      "image": "/assets/img/products/Image-8.png",
+      "price": 6.2,
+      "priceTag": "per 100g",
+      "specification": {
+        "Origin": "Italy (Calabria)",
+        "Scoville Heat Units(SHU)": "30,000 - 50,000",
+        "Aroma Profile": "Sweet and fruity appearance hiding an immediate sharp heat",
+        "Recommended Uses": "Stuffed with cheese, pickled, sliced into pizzas and pasta",
+        "Warning": "Heat varies between pods; refrigerate and use within 10 days of delivery"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "Adorable little demons",
+          "text": "Stuffed these with cream cheese and baked them. They look like innocent cherry peppers, then detonate in your mouth. Beautiful, fresh, and mean.",
+          "authorName": "AntipastiQueen",
+          "authorAvatar": "/assets/img/avatars/avatar7.svg"
+        },
+        {
+          "rating": 4,
+          "heading": "Inconsistent heat, great flavor",
+          "text": "Some peppers in my pack were politely warm, others were full assault weapons. That's nature, I suppose. Flavor is excellent pickled. Docked a star for uneven heat.",
+          "authorName": "PickleEnthusiast",
+          "authorAvatar": "/assets/img/avatars/avatar8.svg"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Five-Alarm Chili Starter Kit",
+      "type": "Sadistic Blends",
+      "agonylevel": "Ring of Fire",
+      "shortdesc": "For questioning all your life choices",
+      "description": "The Five-Alarm Chili Starter Kit is not just a collection of spices - it is a structured course in the art of heat, designed for those who want to understand chili from the ground up. Inside you'll find five carefully curated chili blends arranged in order of intensity: the smoky warmth of ancho, the rustic depth of chipotle, the fruity fire of habanero, the creeping menace of ghost, and finally the Carolina Reaper, waiting at the end like a final exam you didn't study for. Alongside the blends, we include our signature spice mix - cumin, oregano, smoked paprika, and a touch of cocoa - plus five detailed recipe cards that guide you from Level 1 to Level 5, teaching you how heat layers, builds, and balances. This kit makes an unforgettable gift for the aspiring chili cook, a weekend project for the adventurous, or a slow-motion dare for the overconfident. Start at Level 1. Your future self will thank you.",
+      "image": "/assets/img/products/Image-9.png",
+      "price": 19.5,
+      "priceTag": "per kit",
+      "specification": {
+        "Origin": "Curated small-batch kit",
+        "Scoville Heat Units(SHU)": "2,500 - 1,000,000+ depending on blend",
+        "Aroma Profile": "Layered smoke, fruit, and progressively unhinged heat",
+        "Recommended Uses": "Follow the level 1-5 recipe cards; level 5 requires a waiver of common sense",
+        "Warning": "Level 5 contains Carolina Reaper - not a drill"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "A journey through regret",
+          "text": "Cooked levels 1 through 5 over a month. Level 3 was my happy place. Level 5 made my dog leave the room. The recipe cards are genuinely great and teach a lot about layering heat.",
+          "authorName": "ChiliArchitect",
+          "authorAvatar": "/assets/img/avatars/avatar9.svg"
+        },
+        {
+          "rating": 4,
+          "heading": "Fun concept, small packets",
+          "text": "The progression concept is brilliant and the blends are quality. Only complaint is I wish there was more of each blend - the ghost and reaper packets are tiny. But I get it, they're weapons-grade.",
+          "authorName": "BatchCook_Bella",
+          "authorAvatar": "/assets/img/avatars/avatar10.svg"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "The Abyss - Pure Evil Extract",
+      "type": "Infernal Extracts",
+      "agonylevel": "Legal Weapon",
+      "shortdesc": "One drop is a crime. Use with caution",
+      "description": "The Abyss is the end of the road. What you hold is not a hot sauce, not a condiment, not even a food in any conventional sense - it is pure capsaicin extract, the active compound that makes chili peppers hot, concentrated to a level of 5 to 10 million Scoville units. To put that in perspective: a jalapeno measures around 5,000 SHU. Police-grade pepper spray sits at about 2 million. The Abyss laughs at both. It has no flavor, no aroma, no culinary pretense - only heat in its most elemental, undiluted form. A single drop, properly dispersed, is enough to bring a full pot of chili to superhot intensity. Two drops approach the limits of what the human body can process without genuine distress. We sell it with a dropper, a safety cap, and the sincere recommendation that you treat it like a laboratory reagent - because that's exactly what it is. This bottle will outlive you. Use it wisely, or not at all.",
+      "image": "/assets/img/products/Image-10.png",
+      "price": 25,
+      "priceTag": "per 30ml",
+      "specification": {
+        "Origin": "Laboratory-grade extraction",
+        "Scoville Heat Units(SHU)": "5,000,000 - 10,000,000",
+        "Aroma Profile": "None. Pure, distilled pain",
+        "Recommended Uses": "Measured in single drops for entire batches of sauce. Never consume undiluted",
+        "Warning": "Food additive only. Do not apply to skin. Keep locked away from children, pets and curious friends"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "This should be regulated",
+          "text": "One drop in a liter of sauce made it uncomfortably hot for experienced chiliheads. This bottle will outlive me and possibly my grandchildren. Handle like a biohazard.",
+          "authorName": "MadScientist_Vic",
+          "authorAvatar": "/assets/img/avatars/avatar1.svg"
+        },
+        {
+          "rating": 3,
+          "heading": "Technically impressive, practically terrifying",
+          "text": "It does exactly what it promises, which is why I can't give it five stars - no one should want this. There's no flavor, only pain management. Bought it for sauce making, now it's a kitchen conversation piece.",
+          "authorName": "ReasonableHuman_Tanya",
+          "authorAvatar": "/assets/img/avatars/avatar2.svg"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "\"Why Did I Do This?\" Hot Salt",
+      "type": "Sadistic Blends",
+      "agonylevel": "Serious Heat",
+      "shortdesc": "A salty, crunchy path to pure regret",
+      "description": "Why Did I Do This? Hot Salt begins life as premium flaky sea salt, harvested and left to form its delicate, crunchy crystals. Then we commit our crime: folding in crushed red chili, a whisper of ghost pepper dust, and smoked paprika, creating a finishing salt that seduces you one crystal at a time. The first few bites are a revelation - bright salinity, gentle warmth, the satisfying crunch of proper flakes. By bite ten, the ghost pepper has quietly accumulated on your palate, and the question in the product name becomes a genuine inquiry. This is a finishing salt, and it deserves to be treated as one: scatter it over fried eggs, ripe avocado, grilled corn, or popcorn; rim a margarita glass with it and watch your guests' faces cycle through confusion, delight, and mild panic. Use it at the table, not in the pot. And whatever you do - do not eat it by the spoonful. We know you will. We warned you.",
+      "image": "/assets/img/products/Image-11.png",
+      "price": 16.2,
+      "priceTag": "per 120g",
+      "specification": {
+        "Origin": "Artisan small batch",
+        "Scoville Heat Units(SHU)": "8,000 - 15,000",
+        "Aroma Profile": "Crunchy salinity with a creeping warmth that builds with every bite",
+        "Recommended Uses": "Finishing salt for eggs, avocado, grilled vegetables, popcorn, rimming cocktail glasses",
+        "Warning": "Do not eat by the spoonful; the name is a genuine question, not a dare"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "heading": "My new finishing obsession",
+          "text": "Put this on popcorn and physically could not stop eating despite my mouth being on fire. The crunch of the flakes plus the slow heat is genius. Already ordered a second jar.",
+          "authorName": "PopcornAddict_Yana",
+          "authorAvatar": "/assets/img/avatars/avatar3.svg"
+        },
+        {
+          "rating": 4,
+          "heading": "Dangerous on margarita rims",
+          "text": "The spicy salt rim elevated my margaritas to a religious experience. Docking one star because the jar lid doesn't seal well and the salt loses crunch after a few weeks.",
+          "authorName": "CocktailWitch",
+          "authorAvatar": "/assets/img/avatars/avatar4.svg"
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

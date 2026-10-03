@@ -1,0 +1,10 @@
+<div (click)="goToProductPage()" class="product-card-link">
+  <div class="product-card">
+    <img [src]="product?.image" [alt]="product?.name" class="product-card__image" />
+    <div class="product-card__info">
+      <h4 class="product-card__name">{{ product?.name }}</h4>
+      <p class="product-card__price">${{ product?.price }}</p>
+      <p class="product-card__description">{{ product?.shortdesc }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<main class="account-page-wrapper">
+  <div class="account-page-container">
+    <nav class="account-page-tabs">
+      <a routerLink="/account/orders" class="account-page-tab" routerLinkActive="active"
+        >Order History</a
+      >
+      <a routerLink="/account/info" class="account-page-tab" routerLinkActive="active"
+        >Account Information</a
+      >
+    </nav>
+
+    <div class="tab-content">
+      <router-outlet />
+    </div>
+  </div>
+</main>

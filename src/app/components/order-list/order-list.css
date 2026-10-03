@@ -1,0 +1,36 @@
+.order-history-table {
+  width: 100%;
+  background-color: var(--background-default);
+  border-radius: 16px;
+  border: 1px solid var(--border-default);
+  overflow: hidden;
+}
+
+.order-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background-color: var(--background-red);
+  font-weight: 700;
+}
+
+.order-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  border-top: 1px solid var(--border-default);
+}
+
+.order-table-cell {
+  padding: 20px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-date {
+  color: var(--grey-text);
+}
+
+.cell-center {
+  text-align: center;
+}
