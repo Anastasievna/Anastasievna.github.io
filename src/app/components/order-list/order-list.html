@@ -1,0 +1,32 @@
+<div id="order-history" class="order-history-wrapper">
+  @if (orders$ | async; as orders) {
+    @if (orders.length) {
+      <div class="order-history-table">
+        <div class="order-table-header">
+          <div class="order-table-cell">Order Details</div>
+          <div class="order-table-cell cell-center">Order Status</div>
+          <div class="order-table-cell cell-center">Total</div>
+        </div>
+
+        <div class="order-table-body">
+          @for (order of orders; track order.id) {
+            <div class="order-table-row">
+              <div class="order-table-cell">
+                <span class="order-id">#{{ order.orderNumber }}</span>
+                <span class="order-date">{{ order.date }}</span>
+              </div>
+              <div class="order-table-cell cell-center">
+                <span class="order-status">{{ order.status }}</span>
+              </div>
+              <div class="order-table-cell cell-center">
+                <span class="order-total">${{ order.total }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    } @else {
+      <p>There are no orders.</p>
+    }
+  }
+</div>

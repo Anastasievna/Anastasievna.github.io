@@ -1,0 +1,52 @@
+<aside class="sidebar filter-menu">
+  <div class="sidebar__section">
+    <h3 class="section-title">Keywords</h3>
+    <div class="keywords-list">
+      @for (type of selectedTypes; track type) {
+        <span class="keyword-tag">
+          {{ type }}
+          <i class="fa-solid fa-xmark remove-keyword-icon" (click)="changeType(type)"></i>
+        </span>
+      }
+      @for (level of selectedLevels; track level) {
+        <span class="keyword-tag">
+          {{ level }}
+          <i class="fa-solid fa-xmark remove-keyword-icon" (click)="changeLevel(level)"></i>
+        </span>
+      }
+    </div>
+  </div>
+
+  <div class="sidebar__section">
+    <h3 class="section-title">Product Type</h3>
+    <div class="checkbox-group">
+      @for (type of types; track type) {
+        <label class="checkbox-container"
+          >{{ type }}
+          <input
+            type="checkbox"
+            (click)="changeType(type)"
+            [checked]="selectedTypes.includes(type)"
+          />
+          <span class="checkmark"></span>
+        </label>
+      }
+    </div>
+    <div class="sidebar__section">
+      <h3 class="section-title">Filter by Agony Level</h3>
+      <div class="checkbox-group">
+        @for (level of levels; track level) {
+          <label class="checkbox-container"
+            >{{ level }}
+            <input
+              type="checkbox"
+              (click)="changeLevel(level)"
+              [checked]="selectedLevels.includes(level)"
+            />
+            <span class="checkmark"></span>
+          </label>
+        }
+      </div>
+    </div>
+  </div>
+</aside>

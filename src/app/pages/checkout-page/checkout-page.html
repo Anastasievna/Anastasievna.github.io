@@ -1,0 +1,31 @@
+<main class="checkout-page-wrapper">
+  <div class="checkout-container">
+    <h1 class="checkout-title">Order Details</h1>
+
+    <div id="checkout-form">
+      <app-user-info (shippingChange)="shippingChange($event)"></app-user-info>
+      <app-pay-method (selectedMethod)="getPayMethod($event)"></app-pay-method>
+
+      <section class="checkout-summary">
+        <h2 class="checkout-section__title">Order Summary</h2>
+        <div class="summary-details">
+          <div class="summary-total">
+            <p>Total</p>
+            <p>{{ typeof total == 'number' ? `$${total.toFixed(2)}` : '' }}</p>
+          </div>
+          <button
+            type="button"
+            class="button button--primary button--pay"
+            [disabled]="!shippingValid"
+            (click)="createOrder()"
+          >
+            Create order
+          </button>
+          @if (!shippingValid) {
+            <p class="error">Fill in shipping information</p>
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+</main>

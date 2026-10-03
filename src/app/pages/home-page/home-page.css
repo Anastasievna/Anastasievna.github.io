@@ -1,0 +1,43 @@
+.main-content-grid {
+  display: grid;
+  grid-template-columns: 304px 1fr;
+  gap: 32px;
+  align-items: flex-start;
+  padding-bottom: 64px;
+}
+
+.product-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.peppers-banner {
+  position: relative;
+  max-width: 1312px;
+  margin: 0 auto 32px;
+  height: 400px;
+  overflow: hidden;
+  padding: 0 64px;
+}
+
+.peppers-banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+}
+
+.peppers-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}

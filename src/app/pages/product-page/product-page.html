@@ -1,0 +1,94 @@
+@if (product$ | async; as product) {
+  <main class="page-product">
+    <div class="product-container">
+      <section class="product-details-section">
+        <div class="product-image-container">
+          <img [src]="product.image" [alt]="product.name" class="product-image" />
+        </div>
+        <div class="product-info-column">
+          <div class="product-title-price">
+            <h1 class="product-name">{{ product.name }}</h1>
+            <div class="price-section">
+              <span class="price-tag">{{ product.priceTag }}</span>
+              <p class="product-price">${{ product.price ? product.price.toFixed(2) : '' }}</p>
+            </div>
+          </div>
+          <div class="product-description">{{ product.description }}</div>
+          <div class="cart-controls">
+            @if (productInCart$ | async; as productInCart) {
+              <div class="quantity-counter" id="quantity-counter">
+                <button class="quantity-btn" (click)="decreaseProduct(product)">
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <span class="quantity-value">{{ productInCart }} in cart</span>
+                <button class="quantity-btn" (click)="increaseProduct(product)">
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            } @else {
+              @if (authService.currentUserId) {
+                <button
+                  class="button button--primary add-to-cart-button"
+                  id="add-to-cart-btn"
+                  (click)="addProduct(product)"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <span>Add to Cart</span>
+                </button>
+              } @else {
+                <button class="button button--primary add-to-cart-button" routerLink="/login">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Sign in to add to cart</span>
+                </button>
+              }
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="accordion-section">
+        <details class="accordion-item">
+          <summary class="accordion-title">
+            <h3>Technical Specifications</h3>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+          </summary>
+          <div class="accordion-content">
+            <ul style="list-style-type: disc">
+              @for (item of product.specification | keyvalue; track item.key) {
+                <li>{{ item.key }}: {{ item.value }}</li>
+              }
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <section class="reviews-section">
+        <h2 class="reviews-title">Latest reviews</h2>
+        <div class="reviews-grid">
+          @for (review of product.reviews; track $index) {
+            <div class="review-card">
+              <div class="review-rating">
+                @for (value of Array(5); track $index) {
+                  <i
+                    class="fa-star"
+                    [ngClass]="$index < review.rating ? 'fa-solid' : 'fa-regular'"
+                  ></i>
+                }
+              </div>
+              <div class="review-body">
+                <h4 class="review-heading">{{ review.heading }}</h4>
+                <p class="review-text">{{ review.text }}</p>
+              </div>
+              <div class="review-author">
+                <img [src]="review.authorAvatar" alt="User avatar" class="author-avatar" />
+                <span class="author-name">{{ review.authorName }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      </section>
+    </div>
+  </main>
+} @else {
+  <p>Загрузка...</p>
+}

@@ -1,0 +1,65 @@
+<div class="account-wrapper">
+  <h2 class="account-title">{{ title }}</h2>
+  <form [formGroup]="form" id="account-info-form" (ngSubmit)="submit()">
+    <div class="account-form-group">
+      <label for="acc-full-name">Full Name</label>
+      <input id="acc-full-name" class="input" placeholder="Value" formControlName="name" />
+    </div>
+    @if (form.controls.name.touched && form.controls.name.hasError('required')) {
+      <div class="error">Name is required!</div>
+    }
+    <div class="account-form-group">
+      <label for="acc-phone">Phone number</label>
+      <input type="tel" id="acc-phone" class="input" placeholder="Value" formControlName="phone" />
+    </div>
+    @if (form.controls.phone.touched) {
+      <div [hidden]="!form.controls.phone.hasError('required')" class="error">
+        Phone is required!
+      </div>
+      <div [hidden]="!form.controls.phone.hasError('pattern')" class="error">Incorrect phone!</div>
+    }
+    @if (edit) {
+      <div class="account-form-group">
+        <label for="acc-email">Email</label>
+        <input
+          id="acc-email"
+          class="input"
+          placeholder="example@mail.com"
+          formControlName="email"
+        />
+      </div>
+    }
+    <div class="account-form-group">
+      <label for="acc-city">City</label>
+      <input type="text" id="acc-city" class="input" placeholder="Value" formControlName="city" />
+    </div>
+    @if (form.controls.city.touched && form.controls.city.hasError('required')) {
+      <div class="error">City is required!</div>
+    }
+    <div class="account-form-group">
+      <label for="acc-address">Shipping address</label>
+      <textarea
+        id="acc-address"
+        class="textarea"
+        placeholder="Value"
+        rows="3"
+        formControlName="address"
+      ></textarea>
+    </div>
+    @if (form.controls.address.touched) {
+      <div [hidden]="!form.controls.address.hasError('required')" class="error">
+        Address is required!
+      </div>
+      <div [hidden]="!form.controls.address.hasError('minlength')" class="error">
+        Address is too short!
+      </div>
+    }
+
+    @if (edit) {
+      <button type="submit" class="button button--primary button--full-width">Save</button>
+      <button type="button" (click)="logout()" class="button button--secondary button--full-width">
+        Logout
+      </button>
+    }
+  </form>
+</div>

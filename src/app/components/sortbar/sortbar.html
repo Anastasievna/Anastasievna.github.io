@@ -1,0 +1,25 @@
+<div class="search-sort-bar">
+  <div class="search-input-wrapper">
+    <input
+      type="text"
+      placeholder="Find your pain"
+      class="search-input"
+      [(ngModel)]="search"
+      (ngModelChange)="searchChange($event)"
+    />
+    <button class="search-button" aria-label="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+  <div class="sort-options">
+    @for (variant of variants; track $index) {
+      <button
+        class="sort-button"
+        [ngClass]="selectedSort === variant ? 'active-sort' : ''"
+        (click)="changeSort(variant)"
+      >
+        <span>{{ variant }}</span>
+      </button>
+    }
+  </div>
+</div>

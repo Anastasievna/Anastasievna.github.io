@@ -1,0 +1,18 @@
+<div class="payment-wrapper">
+  <h2 class="payment-title">Payment Method</h2>
+  <div class="payment-options">
+    @for (method of methods; track $index) {
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="payment_method"
+          [value]="method"
+          [(ngModel)]="selectedInputMethod"
+          (ngModelChange)="changePayMethod()"
+        />
+        <span class="radio-custom"></span>
+        <span class="radio-label">{{ method }}</span>
+      </label>
+    }
+  </div>
+</div>

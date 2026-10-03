@@ -1,0 +1,32 @@
+<main>
+  <section class="peppers-banner">
+    <img
+      src="assets/img/background/bg-peppers.png"
+      alt="Beautiful peppers on a dark background"
+      class="peppers-banner__image"
+    />
+    <div class="peppers-banner__overlay"></div>
+  </section>
+
+  <div class="main-content-grid">
+    <app-sidebar
+      (filtersTypes)="productTypesChange($event)"
+      (filtersLevels)="levelsChange($event)"
+    />
+
+    <section class="products-area product-grid-section">
+      <app-sortbar (filterSearch)="searchChange($event)" (sortType)="sortTypeChange($event)" />
+      <div class="product-grid">
+        @if (products$ | async; as products) {
+          @for (product of products; track product.id) {
+            <app-product [product]="product" />
+          } @empty {
+            <p>There are no products.</p>
+          }
+        } @else {
+          <p>Loading...</p>
+        }
+      </div>
+    </section>
+  </div>
+</main>
